@@ -1,0 +1,9 @@
+.menu_area {
+  background-color: #FF6A00;
+  color: #fff;
+}
+.navbar-brand {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 700;
+}

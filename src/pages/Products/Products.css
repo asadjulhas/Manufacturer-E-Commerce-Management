@@ -235,7 +235,7 @@
   color: #111111;
   margin-bottom: 12px;
   display: block;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .single-products .product-content .title:hover {
@@ -389,14 +389,21 @@ Product View One Style
   max-width: 900px;
   margin: 0 auto;
 }
-
+.products-cart-wish-view {
+	text-align: center;
+  margin-top: 10px;
+}
 .product-view-one .modal-content {
   border: none;
   padding: 40px;
   border-radius: 0;
   overflow: scroll;
 }
-
+.info {
+	color: #333;
+	font-size: 14px;
+	line-height: 19px;
+}
 .product-view-one .modal-content button.close {
   position: absolute;
   right: 0;
@@ -839,4 +846,7 @@ Product View One Style
 .product-view-one:hover .owl-next {
   opacity: 1;
   right: 0;
+}
+.homepage_products {
+	padding: 50px 0;
 }

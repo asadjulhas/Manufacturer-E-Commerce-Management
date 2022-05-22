@@ -9,6 +9,9 @@ body {
   height: 40vmin;
   pointer-events: none;
 }
+.loader_spinner {
+	text-align: center;
+}
 a {
   text-decoration: none !important;
 }

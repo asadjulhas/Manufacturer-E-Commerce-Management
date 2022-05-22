@@ -1,0 +1,339 @@
+.dashboard-navigation {
+  border: 1px solid #dddddd;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.dashboard-navigation li {
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.dashboard-navigation li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.dashboard-navigation li h3 {
+  font-size: 20px;
+}
+
+.dashboard-navigation li a {
+  color: #9C9C9C;
+  display: block;
+}
+
+.dashboard-navigation li a:hover {
+  color: #ff6a00;
+}
+
+.dashboard-navigation li a.active {
+  color: #ff6a00;
+}
+
+.profile-bar {
+  background-color: #e6f7f6;
+  padding: 40px 30px;
+  margin-bottom: 30px;
+}
+
+.profile-bar .profile-info {
+  position: relative;
+  padding-left: 125px;
+}
+
+.profile-bar .profile-info img {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  border-radius: 50px;
+}
+
+.profile-bar .profile-info h3 {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.profile-bar .profile-info h3 a {
+  color: #111111;
+}
+
+.profile-bar .profile-info span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile-bar .profile-info a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.profile-bar .edit-profiles {
+  text-align: right;
+}
+
+.billing-address-bar {
+  background-color: #fff4f3;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.billing-address-bar h3 {
+  font-size: 20px;
+  margin-bottom: 7px;
+}
+
+.billing-address-bar ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.billing-address-bar ul li {
+  margin-bottom: 10px;
+}
+
+.billing-address-bar ul li span {
+  color: #111111;
+  margin-right: 10px;
+}
+
+.billing-address-bar ul li:last-child {
+  margin-bottom: 0;
+}
+
+.billing-address-bar .edit-address {
+  text-align: right;
+}
+
+.billing-address-bar .edit-address .default-btn {
+  background-color: transparent;
+  border: 1px solid #ff6a00;
+  color: #111111;
+}
+
+.billing-address-bar .edit-address .default-btn::before, .billing-address-bar .edit-address .default-btn::after {
+  background-color: #ff6a00;
+}
+
+.billing-address-bar .edit-address .default-btn:hover {
+  color: #ffffff;
+}
+
+.edit-profile h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.submit-property-form .form-group {
+  margin-bottom: 20px;
+}
+
+.submit-property-form .form-group label {
+  margin-bottom: 10px;
+  color: #111111;
+}
+
+.submit-property-form .form-group .form-select {
+  color: #9C9C9C;
+}
+
+.submit-property-form .file-upload {
+  position: relative;
+  border: 1px solid #dddddd;
+}
+
+.submit-property-form .file-upload .inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.submit-property-form .file-upload label {
+  display: block;
+}
+
+.submit-property-form .file-upload .inputfile + label {
+  color: #111111;
+  background-color: #ffffff;
+  margin-bottom: 0;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  padding: 14px 20px;
+  position: relative;
+  height: 140px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.submit-property-form .file-upload i {
+  position: relative;
+  top: 2px;
+  margin-right: 5px;
+  display: block;
+  font-size: 50px;
+}
+
+.submit-property-form .file-upload .inputfile:focus + label, .submit-property-form .file-upload .inputfile + label:hover {
+  background-color: transparent;
+  color: #ff6a00;
+}
+
+.submit-property-form .file-upload .inputfile + label {
+  cursor: pointer;
+  display: block;
+}
+
+.order-details-area .cart-totals {
+  padding: 30px;
+  background-color: #e6f7f6;
+  position: relative;
+}
+
+.order-details-area .cart-totals h3 {
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+.order-details-area .cart-totals .default-btn {
+  border: 1px solid #ff6a00;
+  background-color: #ffffff;
+  color: #111111;
+  padding: 12px 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.order-details-area .cart-totals .default-btn:hover {
+  color: #ffffff;
+  border-color: #111111;
+}
+
+.order-details-area .cart-totals ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.order-details-area .cart-totals ul li {
+  color: #9C9C9C;
+  position: relative;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.order-details-area .cart-totals ul li b {
+  font-weight: 400;
+  color: #111111;
+}
+
+.order-details-area .cart-totals ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.order-details-area .cart-totals ul li span {
+  float: right;
+  color: #9C9C9C;
+  font-weight: normal;
+}
+
+.order-details-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.address-details-area {
+  margin-top: 50px;
+}
+
+.address-details-area .cart-totals {
+  padding: 30px;
+  background-color: #fff4f3;
+}
+
+.address-details-area .cart-totals h3 {
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  position: relative;
+}
+
+.address-details-area .cart-totals ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.address-details-area .cart-totals ul li {
+  color: #9C9C9C;
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 75px;
+}
+
+.address-details-area .cart-totals ul li:last-child {
+  margin-bottom: 0;
+}
+
+.address-details-area .cart-totals ul li span {
+  color: #111111;
+  font-weight: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.address-list h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.address-list .added-address {
+  background-color: #e6f7f6;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.address-list .added-address a {
+  display: block;
+  padding: 30px;
+}
+
+.address-list .added-address a i {
+  font-size: 30px;
+  line-height: 1;
+  border: 1px solid #ff6a00;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.address-list .added-address a span {
+  display: block;
+  color: #9C9C9C;
+}
+
+.address-list .edit-address .default-btn {
+  width: 100%;
+  margin-bottom: 10px;
+}

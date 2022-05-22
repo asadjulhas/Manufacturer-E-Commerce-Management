@@ -23,6 +23,7 @@ const Header = () => {
         <Link className='nav-link' to='/blogs'>Blogs</Link>
         { user?.uid ? '' : <Link className='nav-link' to='/login'>Login</Link>}
         { user?.uid ? '' : <Link className='nav-link' to='/register'>Register</Link>}
+        { user?.uid ? <Link className='nav-link' to='/dashboard'>Dashboard</Link> : ''}
 
 
         { user?.uid ? <NavDropdown title={user?.displayName || user?.email} id="basic-nav-dropdown">

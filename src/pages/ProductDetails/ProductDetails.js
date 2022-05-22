@@ -23,7 +23,7 @@ const ProductDetails = () => {
   const [formAlert, setFormAlert] = useState('');
 
   useEffect(() => {
-    axios(`http://localhost:5000/product/${id}`,{
+    axios(`https://boiling-brushlands-60040.herokuapp.com/product/${id}`,{
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
@@ -47,7 +47,9 @@ const ProductDetails = () => {
     const quantity = e.target.quantity.value;
     const phone = e.target.phone.value;
     const address = e.target.address.value;
+    const price = quantity * product.price;
     const payment = false;
+    const img = product.img;
 
     if(quantity < product.minOrder) {
       setFormAlert(`Quantity can't less than ${product.minOrder}`)
@@ -63,9 +65,9 @@ const ProductDetails = () => {
       setFormAlert('')
     }
 
-    const data = {clientName, email, productName, productId, quantity, phone, address, payment};
+    const data = {clientName, email, productName, productId, quantity, phone, address, payment, price, img};
 
-    axios.post('http://localhost:5000/order', data)
+    axios.post('https://boiling-brushlands-60040.herokuapp.com/order', data)
     .then(res => {
       if(res.data.acknowledged) {
         toast.success(`Your order successfully placed!`, {
@@ -215,7 +217,7 @@ const ProductDetails = () => {
   
   <p className='text-danger'>{formAlert}</p>
   <Button className='btn-style2' variant="primary" type="submit">
-    Add product
+    Place order
   </Button>
 </Form>
         </Modal.Body>

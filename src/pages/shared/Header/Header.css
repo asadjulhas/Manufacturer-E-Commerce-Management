@@ -8,3 +8,22 @@
   font-weight: 700;
   font-size: 16px;
 }
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+	background: #F8F8F9;
+	text-align: center;
+	padding: 10px;
+}
+.dropdown-menu a.dp_menu {
+	color: #555555 !important;
+}
+.dropdown-menu a:hover{
+	color: #FF6A00 !important;
+}
+.user_avatar {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: #FF6A00;
+	padding: 2px;
+  margin-bottom: 5px;
+}

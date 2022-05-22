@@ -1,0 +1,191 @@
+/* cart login box css */
+.register-area {
+  max-width: 60%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+.register-area .register-box {
+  width: 50%;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+.register-area .register-box h1 {
+  font-size: 30px;
+  text-align: center;
+}
+.register-area .register-box p {
+  margin-top: 10px;
+  text-align: center;
+}
+.register-area .register-box form {
+  margin-top: 22px;
+}
+.register-area .register-box form input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-top: 20px;
+  font-size: 13px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+}
+.register-area .register-box form input:first-child {
+  margin-top: 0px;
+}
+.register-area .register-box a.btn-style1 {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}
+.register-area .register-account {
+  width: calc(50% - 30px);
+  margin-left: 30px;
+}
+.register-area .register-account h4 {
+  font-size: 16px;
+  text-align: center;
+}
+.register-area .register-account a.ceate-a {
+  position: relative;
+  color: #ff6a00;
+  width: 100%;
+  padding: 13px 25px;
+  margin-top: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff6a00;
+  border-radius: 3px;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.register-area .register-account a.ceate-a::after {
+  background-color: #ff6a00;
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.register-area .register-account a.ceate-a:hover::after {
+  opacity: 0.1;
+  visibility: visible;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -o-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s;
+}
+.register-area .register-account .register-info a.terms-link span {
+  color: #000;
+  line-height: 1;
+  font-size: 12px;
+}
+.register-area .register-account .register-info a.terms-link {
+  color: #ff6a00;
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.register-area .register-account .register-info p {
+  font-size: 13px;
+  margin-top: 10px;
+}
+.register-area .register-account .register-info p a {
+  color: #ff6a00;
+  font-weight: 600;
+}
+.btn-style1 {
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 30px;
+  background-color: #ff6a00;
+  font-weight: 600;
+  border: 2px solid #ff6a00;
+  border-radius: 25px;
+}
+.btn-style1:hover {
+  color: #000;
+  background-color: #ff6a00;
+}
+.register-area .register-box button.btn-style1 {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+.google_signin {
+  background-color: #4285f4 !important;
+  margin-top: 10px;
+}
+.register-info {
+  margin-top: 24px;
+}
+.re-password {
+  color: #ff6a00;
+  margin-top: 25px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.error_message {
+  margin: 0;
+  font-size: 14px;
+  color: #ff0000;
+}
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+}
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+  .register-area {
+    max-width: 80%;
+  }
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .register-area {
+    max-width: 95%;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .register-area .register-box {
+    width: 100%;
+  }
+  .register-area .register-account {
+    width: calc(95% - 30px);
+    margin-left: 0;
+  }
+}
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+  .register-area {
+    max-width: 95%;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .register-area .register-box {
+    width: 100%;
+  }
+  .register-area .register-account {
+    width: calc(95% - 30px);
+    margin-left: 0;
+  }
+  .register-area .register-box p {
+    font-size: 13px;
+  }
+  .register-area .register-box h1 {
+    font-size: 20px;
+  }
+}

@@ -16,8 +16,11 @@ const Products = () => {
   if (isLoading) {
     return <LoadingSpinner className="homepage_products" />;
   }
+
+  // const desc = data[0].description;
+
   return (
-    <section className="featured-products-area ptb-54">
+    <section className="featured-products-area">
       <div className="container">
         <div className="section-title">
           <h2>Featured Products</h2>
@@ -35,7 +38,7 @@ const Products = () => {
 
                 <div className="product-content">
                   <span className="title">{p.name}</span>
-                  <p className="info">{p.description}.</p>
+                  <p className="info">{p.description.slice(0, 100)}...</p>
                   <ul className="products-price">
                     <li>
                       <span>Minimum order</span> {p.minOrder}, &nbsp;
@@ -45,7 +48,7 @@ const Products = () => {
 
                   <ul className="products-price">
                     <li>
-                      ${p.price} <del>${Math.ceil(p.price * 0.9)}</del> per unit
+                      ${p.price} <del>${Math.ceil(p.price * 1.3)}</del> per unit
                     </li>
                   </ul>
 

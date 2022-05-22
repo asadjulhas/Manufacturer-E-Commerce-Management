@@ -37,7 +37,7 @@ const Footer = () => {
                           className="cart_icon"
                           icon={faEnvelope}
                         />
-									<a href="mailto:ehay@example.com">ehay@example.com</a>
+									<a href="mailto:borak@example.com">borak@example.com</a>
 								</li>
 								<li>
                 <FontAwesomeIcon

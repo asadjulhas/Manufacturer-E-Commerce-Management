@@ -1,7 +1,8 @@
 .count_down {
-  padding-bottom: 25px;
-  padding-top: 1px;
-  margin-top: 100px;
+	padding-bottom: 25px;
+	padding-top: 1px;
+	margin-top: 70px;
+	margin-bottom: 70px;
 }
 .countdown_area {
  margin-top: 25px;
@@ -21,10 +22,16 @@
    font-size: 15px;
    font-weight: 700;
 }
-.awsam_icon i:hover{
-   color: #FFFFFF;
+.counter {
+	margin-top: 20px;
+	display: block;
 }
-.fa.fa-camera.fa-3x, .fa.fa-cloud-download.fa-3x, .fa.fa-trophy.fa-3x, .fa.fa-heart.fa-3x {
- margin-left: 2px;
- margin-top: 42px;
+.awsam_icon svg {
+   color: #ff6a00;
+   margin-left: 2px;
+   margin-top: 42px;
+   font-size: 3em;
+}
+.awsam_icon svg:hover{
+   color: #FFFFFF;
 }

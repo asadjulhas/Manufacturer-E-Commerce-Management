@@ -4,7 +4,7 @@
     "description": "The Flex 24V Max Hammer Drill with Turbo Mode earned a final rating of 9.8 to stand at the top of the charts. It finished in the top 3 of every test we ran, but it’s still compact at just 7.1 inches long.",
     "img": "https://templates.envytheme.com/ehay/default/assets/images/products/product-7.jpg",
     "price": 13,
-    "min-order": 200,
+    "minOrder": 200,
     "stock": 1700,
     "type": "new"
   },
@@ -13,8 +13,26 @@
     "description": "The Flex 24V Max Hammer Drill with Turbo Mode earned a final rating of 9.8 to stand at the top of the charts. It finished in the top 3 of every test we ran, but it’s still compact at just 7.1 inches long.",
     "img": "https://templates.envytheme.com/ehay/default/assets/images/products/product-8.jpg",
     "price": 22,
-    "min-order": 150,
+    "minOrder": 150,
     "stock": 1325,
+    "type": "hot"
+  },
+  {
+    "name": "Power Tools Set Chinese Manufacturer Production 50V",
+    "description": "The Flex 24V Max Hammer Drill with Turbo Mode earned a final rating of 9.8 to stand at the top of the charts. It finished in the top 3 of every test we ran, but it’s still compact at just 7.1 inches long.",
+    "img": "https://templates.envytheme.com/ehay/default/assets/images/products/product-9.jpg",
+    "price": 12,
+    "minOrder": 225,
+    "stock": 3218,
+    "type": "new"
+  },
+  {
+    "name": "Electrical Magnetic Impact Power Hammer Drills",
+    "description": "The Flex 24V Max Hammer Drill with Turbo Mode earned a final rating of 9.8 to stand at the top of the charts. It finished in the top 3 of every test we ran, but it’s still compact at just 7.1 inches long.",
+    "img": "https://templates.envytheme.com/ehay/default/assets/images/products/product-17.jpg",
+    "price": 28,
+    "minOrder": 200,
+    "stock": 1290,
     "type": "hot"
   }
   

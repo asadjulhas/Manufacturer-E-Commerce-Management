@@ -1,6 +1,3 @@
-.sale-offer-area {
-	margin: 40px 0;
-}
 .sale-offer-bg.bg-2 {
   background-image: url(../../images/sale-bg-2.jpg);
 }
@@ -29,4 +26,7 @@
 .sale-offer-bg h3 {
   font-size: 25px;
   margin-bottom: 35px;
+}
+.sale-offer-area {
+	margin-top: 47px;
 }

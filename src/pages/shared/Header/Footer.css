@@ -1,0 +1,131 @@
+.single-footer-widget {
+  margin-bottom: 24px;
+}
+
+.single-footer-widget h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.single-footer-widget ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.single-footer-widget .info-list {
+  margin-bottom: 20px;
+}
+
+.single-footer-widget .info-list li {
+  font-size: 14px;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 17px;
+}
+
+.single-footer-widget .info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.single-footer-widget .info-list li i {
+  color: #ff6a00;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.single-footer-widget .info-list li a:hover {
+  color: #ff6a00;
+}
+
+.single-footer-widget .social-link {
+  padding: 0;
+  list-style-type: none;
+}
+
+.single-footer-widget .social-link li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.single-footer-widget .social-link li:last-child {
+  margin-right: 0;
+}
+
+.single-footer-widget .social-link li span {
+  margin-right: 20px;
+  color: #111111;
+}
+a {
+	-webkit-transition: all ease 0.5s;
+	transition: all ease 0.5s;
+	text-decoration: none;
+	color: #9C9C9C;
+}
+.single-footer-widget .import-link li {
+  margin-bottom: 10px;
+}
+
+.single-footer-widget .import-link li:last-child {
+  margin-bottom: 0;
+}
+
+.single-footer-widget .app-btn {
+  margin-bottom: 20px;
+}
+
+.single-footer-widget .app-btn li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.single-footer-widget .app-btn li:last-child {
+  margin-right: 0;
+}
+
+.single-footer-widget .app-btn li a img {
+  max-width: 115px;
+}
+
+.single-footer-widget .payment {
+  color: #111111;
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.single-footer-widget .payment-option li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.single-footer-widget .info-list li svg {
+	color: #ff6a00;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.pt-54 {
+	padding-top: 54px;
+}
+.pb-30 {
+	padding-bottom: 30px;
+}
+.copy-right-area {
+  border-top: 1px solid #dddddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.copy-right-area p span {
+  color: #ff6a00;
+}
+
+.copy-right-area p {
+  margin: 0;
+}
+
+.copy-right-area p a:hover {
+  color: #ff6a00;
+}

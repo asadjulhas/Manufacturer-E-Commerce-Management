@@ -1,0 +1,85 @@
+.subscribe-area {
+  background-color: #ff6a00;
+  padding-top: 54px;
+  padding-bottom: 54px;
+}
+
+.newsletter-form {
+  position: relative;
+}
+
+.newsletter-form p {
+  margin-bottom: 20px;
+  color: #c5c6cd;
+}
+
+.newsletter-form .form-control {
+  background-color: transparent;
+  background-color: #ffffff;
+  border: none;
+}
+
+.newsletter-form .form-control::-webkit-input-placeholder {
+  color: #dddddd;
+}
+
+.newsletter-form .form-control:-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.newsletter-form .form-control::-ms-input-placeholder {
+  color: #dddddd;
+}
+
+.newsletter-form .form-control::placeholder {
+  color: #dddddd;
+}
+
+.newsletter-form .submit-btn {
+  background-color: #ff6a00;
+  color: #ffffff;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 14px 25px;
+  height: 49px;
+  border: none;
+}
+
+.newsletter-form #validator-newsletter {
+  color: #ffffff;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.subscribe-content span {
+  color: #ffffff;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.subscribe-content h3 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.subscribe-content p {
+  color: #ffffff;
+}
+.brand_footer {
+	color: #fff;
+	font-weight: 900;
+	font-size: 45px;
+	font-style: italic;
+}
+.form-control {
+	height: 55px;
+	color: #ff6a00;
+	border: 1px solid #d7d7d7;
+	background-color: transparent;
+	border-radius: 0;
+	font-size: 16px;
+	padding: 10px 20px;
+	width: 100%;
+}

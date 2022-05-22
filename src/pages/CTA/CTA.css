@@ -1,0 +1,32 @@
+.sale-offer-area {
+	margin: 40px 0;
+}
+.sale-offer-bg.bg-2 {
+  background-image: url(../../images/sale-bg-2.jpg);
+}
+.sale-offer-bg {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	padding: 100px;
+}
+.sale-offer-bg.product-page {
+  height: auto;
+  padding: 50px;
+}
+
+.sale-offer-bg h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.sale-offer-bg h5 span {
+  color: #ff6a00;
+}
+
+.sale-offer-bg h3 {
+  font-size: 25px;
+  margin-bottom: 35px;
+}

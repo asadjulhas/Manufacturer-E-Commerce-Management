@@ -1,0 +1,30 @@
+.count_down {
+  padding-bottom: 25px;
+  padding-top: 1px;
+  margin-top: 100px;
+}
+.countdown_area {
+ margin-top: 25px;
+}
+.counter_item {
+   background-color: #282828;
+   border-radius: 5px;
+   padding-bottom: 20px;
+}
+.counter_item h2 {
+   color: #FFFFFF;
+   font-size: 30px;
+   font-weight: 700;
+}
+.counter_item p {
+   color: #FFFFFF;
+   font-size: 15px;
+   font-weight: 700;
+}
+.awsam_icon i:hover{
+   color: #FFFFFF;
+}
+.fa.fa-camera.fa-3x, .fa.fa-cloud-download.fa-3x, .fa.fa-trophy.fa-3x, .fa.fa-heart.fa-3x {
+ margin-left: 2px;
+ margin-top: 42px;
+}

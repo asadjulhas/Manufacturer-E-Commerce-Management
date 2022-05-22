@@ -1,13 +1,26 @@
 import axios from "axios";
+import './ProductDetails.css'
 import React, { useEffect, useState } from "react";
+import { Button, Form, Modal } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
+import auth from "../../firebaseinit";
 import PageTitle from "../../hooks/PageTitle";
 import review from "../../images/review.png";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
+  const [user, loading, error] = useAuthState(auth);
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const accessToken = localStorage.getItem('accessToken')
+
+  // Modal handle
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  // Form alert
+  const [formAlert, setFormAlert] = useState('');
 
   useEffect(() => {
     axios(`http://localhost:5000/product/${id}`,{
@@ -19,6 +32,51 @@ const ProductDetails = () => {
       setProduct(res.data);
     });
   }, []);
+
+  const handleOrderForm = () => {
+    setShow(true)
+  }
+
+  const handleOrder = (e) => {
+    e.preventDefault();
+
+    const clientName = user?.displayName;
+    const email = user?.email;
+    const productName = product.name;
+    const productId = product._id;
+    const quantity = e.target.quantity.value;
+    const phone = e.target.phone.value;
+    const address = e.target.address.value;
+    const payment = false;
+
+    if(quantity < product.minOrder) {
+      setFormAlert(`Quantity can't less than ${product.minOrder}`)
+      return;
+    } else {
+      setFormAlert('')
+    }
+
+    if(quantity > product.stock) {
+      setFormAlert(`Quantity can't more than ${product.stock}`)
+      return;
+    } else {
+      setFormAlert('')
+    }
+
+    const data = {clientName, email, productName, productId, quantity, phone, address, payment};
+
+    axios.post('http://localhost:5000/order', data)
+    .then(res => {
+      if(res.data.acknowledged) {
+        toast.success(`Your order successfully placed!`, {
+          position: 'top-center'
+        })
+      };
+      e.target.reset();
+      handleClose();
+    })
+  }
+
   return (
     <section className="product-details-area ptb-54">
       <PageTitle title='Book a Order'/>
@@ -80,10 +138,10 @@ const ProductDetails = () => {
                         </span>
                       </div>
 
-                      <a href="" className="default-btn">
+                      <button onClick={handleOrderForm} className="default-btn border-0">
                         <i className="ri-shopping-cart-line"></i>
                         Book a order now
-                      </a>
+                      </button>
                     </div>
 
                     <div className="share-this-product">
@@ -120,6 +178,54 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Book a order</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form onSubmit={handleOrder}>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Control required name='name' readOnly disabled type="text" value={user.displayName} />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Control required name='email' readOnly disabled type="text" value={user.email} />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+     <Form.Label>Stock <span className="higlite">{product.stock},</span> <span>Minimum order:</span> <span className="higlite">{product.minOrder}</span></Form.Label>
+    <Form.Control required name='quantity' type="number" placeholder="Type your quantity" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Control required name='phone' type="text" placeholder="Your phone" />
+  </Form.Group>
+
+  <Form.Group className="mb-3" controlId="formBasicPassword">
+    <Form.Control required name='address' type="text" placeholder="Your address" />
+  </Form.Group>
+  
+  <p className='text-danger'>{formAlert}</p>
+  <Button className='btn-style2' variant="primary" type="submit">
+    Add product
+  </Button>
+</Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
     </section>
   );
 };

@@ -6,7 +6,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebaseinit';
 import { signOut } from 'firebase/auth';
 
-const Header = () => {const [user, loading, error] = useAuthState(auth);
+const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
   const logOut = () => {
     signOut(auth);
     localStorage.removeItem('accessToken')

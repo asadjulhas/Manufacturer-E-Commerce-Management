@@ -24,6 +24,13 @@ a {
 	position: relative;
   margin-top: 20px;
 }
+.spinner {
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 .section-title {
 	margin-bottom: 30px;
 	margin-top: -5px;

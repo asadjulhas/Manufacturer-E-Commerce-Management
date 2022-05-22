@@ -30,8 +30,6 @@ const Header = () => {const [user, loading, error] = useAuthState(auth);
           <NavDropdown.Divider />
           <Link className='nav-link dp_menu' onClick={logOut}  to=''>Logout</Link>
         </NavDropdown> : '' }
-
-
        
       </Nav>
     </Navbar.Collapse>

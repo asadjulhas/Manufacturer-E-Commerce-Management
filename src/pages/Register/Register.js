@@ -3,7 +3,6 @@ import { Button, Form, Spinner } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useAuthState, useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 import GoogleSignin from "../../hooks/GoogleSignin";
 import auth from "../../firebaseinit";
@@ -21,7 +20,7 @@ const Register = () => {
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
 
-  const [token] = useToken  (userLogin);
+  const [token] = useToken(userLogin);
   const [updateProfile, updating, error2] = useUpdateProfile(auth);
 
   let navigate = useNavigate();
@@ -94,7 +93,6 @@ const Register = () => {
   if(error) {
     errorElement = <p className="error_message d-block mt-3">{error?.message}</p>
   }
-  console.log(userLogin)
   return (
     <section className="section-tb-padding">
     <PageTitle title='Register' />

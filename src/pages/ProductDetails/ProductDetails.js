@@ -1,19 +1,27 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import PageTitle from "../../hooks/PageTitle";
 import review from "../../images/review.png";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
+  const accessToken = localStorage.getItem('accessToken')
 
   useEffect(() => {
-    axios(`http://localhost:5000/product/${id}`).then((res) => {
+    axios(`http://localhost:5000/product/${id}`,{
+      headers: {
+        'authorization': `Bearer ${accessToken}`
+      }
+    })
+    .then((res) => {
       setProduct(res.data);
     });
   }, []);
   return (
     <section className="product-details-area ptb-54">
+      <PageTitle title='Book a Order'/>
       <div className="container">
         <div className="row align-items-center">
           <div className="product-view-one">

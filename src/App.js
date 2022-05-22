@@ -11,6 +11,7 @@ import Register from './pages/Register/Register';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import Login from './pages/Login/Login';
+import RequireAuth from './RequireAuth';
 
 function App() {
   return (
@@ -21,7 +22,11 @@ function App() {
        <Route path='/register' element={<Register/>}/>
        <Route path='/login' element={<Login/>}/>
        <Route path='*' element={<NotFound/>}/>
-       <Route path='/product/:id' element={<ProductDetails/>}/>
+       <Route path='/product/:id' element={
+         <RequireAuth>
+           <ProductDetails/>
+         </RequireAuth>
+       }/>
      </Routes>
      <Subscribe/>
      <Footer/>

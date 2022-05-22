@@ -5,6 +5,8 @@ import slider1 from "../../images/slider/s-1.jpg";
 import slider2 from "../../images/slider/s-2.jpg";
 import slider3 from "../../images/slider/s-3.jpg";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 const HeroBanner = () => {
   return (
@@ -18,7 +20,7 @@ const HeroBanner = () => {
             <p>Free shipping & discount 40% on products</p>
             <div className="banner-btn">
               <Link to="/" className="default-btn">
-                <i className="ri-shopping-cart-line"></i>
+              <FontAwesomeIcon className="cart_icon" icon={faCartPlus} />
                 Shop Now
               </Link>
             </div>
@@ -32,7 +34,7 @@ const HeroBanner = () => {
             <h3>Best Collection For Home Decoration 2021</h3>
             <p>Free shipping & discount 40% on products</p><div className="banner-btn">
               <Link to="/" className="default-btn">
-                <i className="ri-shopping-cart-line"></i>
+              <FontAwesomeIcon className="cart_icon" icon={faCartPlus} />
                 Shop Now
               </Link>
             </div>
@@ -46,7 +48,7 @@ const HeroBanner = () => {
             <h3>All Types Of Premium Quality Tools</h3>
             <p>Free shipping & discount 40% on products</p><div className="banner-btn">
               <Link to="/" className="default-btn">
-                <i className="ri-shopping-cart-line"></i>
+              <FontAwesomeIcon className="cart_icon" icon={faCartPlus} />
                 Shop Now
               </Link>
             </div>

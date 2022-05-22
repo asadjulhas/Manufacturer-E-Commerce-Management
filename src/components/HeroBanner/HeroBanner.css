@@ -6,7 +6,7 @@
   display: none;
 }
 .homePage .carousel-caption {
-	bottom: 30%;
+	bottom: 23%;
 	left: 10%;
 	padding-bottom: 1.25rem;
 	padding-top: 1.25rem;
@@ -73,4 +73,9 @@
 .default-btn:hover::after {
 	-webkit-transform: scaleY(1);
 	transform: scaleY(1);
+}
+.cart_icon {
+	position: relative;
+	top: 1.70px;
+	margin-right: 5px;
 }

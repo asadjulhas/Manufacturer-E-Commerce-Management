@@ -54,7 +54,7 @@ const Products = () => {
 
                   <ul className="products-cart-wish-view">
                     <li>
-                      <Link to="/" className="default-btn">
+                      <Link to={`/product/${p._id}`} className="default-btn">
                         <FontAwesomeIcon
                           className="cart_icon"
                           icon={faCartPlus}

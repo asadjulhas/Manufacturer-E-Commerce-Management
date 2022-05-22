@@ -19,12 +19,12 @@ const Categories = () => {
 				<div className="row justify-content-center">
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories">
-							<a href="product-details.html">
+							<a>
 								<img src={cat1} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Power Tools
 								</a>
 							</h3>
@@ -38,12 +38,12 @@ const Categories = () => {
 
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories bg-eff5ff">
-							<a href="product-details.html">
+							<a>
 								<img src={cat2} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Machine Tools
 								</a>
 							</h3>
@@ -57,12 +57,12 @@ const Categories = () => {
 
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories bg-ebf1f5">
-							<a href="product-details.html">
+							<a>
 								<img src={cat3} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Hand Tools
 								</a>
 							</h3>
@@ -76,12 +76,12 @@ const Categories = () => {
 
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories bg-ebf9ea">
-							<a href="product-details.html">
+							<a>
 								<img src={cat4} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Cordless Tools
 								</a>
 							</h3>
@@ -95,12 +95,12 @@ const Categories = () => {
 
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories bg-fff8e5">
-							<a href="product-details.html">
+							<a>
 								<img src={cat5} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Welding &amp; Soldering
 								</a>
 							</h3>
@@ -114,12 +114,12 @@ const Categories = () => {
 
 					<div className="col-lg-4 col-sm-6">
 						<div className="single-categories bg-f3f1ff">
-							<a href="product-details.html">
+							<a>
 								<img src={cat6} alt="Image"/>
 							</a>
 
 							<h3>
-								<a href="product-details.html">
+								<a>
 									Socket Wrenches
 								</a>
 							</h3>

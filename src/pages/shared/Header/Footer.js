@@ -56,19 +56,19 @@ const Footer = () => {
 
 							<ul className="import-link">
 								<li>
-									<a href="about.html">About</a>
+									<a href="">About</a>
 								</li>
 								<li>
-									<a href="order-tracking.html">Order Tracking</a>
+									<a href="">Order Tracking</a>
 								</li>
 								<li>
-									<a href="terms-conditions.html">Terms &amp; Conditions</a>
+									<a href="">Terms &amp; Conditions</a>
 								</li>
 								<li>
-									<a href="store-location.html">Store Location</a>
+									<a href="">Store Location</a>
 								</li>
 								<li>
-									<a href="privacy-policy.html">Privacy Policy</a>
+									<a href="">Privacy Policy</a>
 								</li>
 							</ul>
 						</div>
@@ -80,19 +80,19 @@ const Footer = () => {
 
 							<ul className="import-link">
 								<li>
-									<a href="faq.html">Help Center</a>
+									<a href="">Help Center</a>
 								</li>
 								<li>
-									<a href="products.html">Products</a>
+									<a href="">Products</a>
 								</li>
 								<li>
-									<a href="terms-conditions.html">Money-back Guarantee!</a>
+									<a href="">Money-back Guarantee!</a>
 								</li>
 								<li>
-									<a href="blog.html">Blog</a>
+									<a href="">Blog</a>
 								</li>
 								<li>
-									<a href="contact.html">Contact</a>
+									<a href="">Contact</a>
 								</li>
 							</ul>
 						</div>

@@ -8,9 +8,9 @@ const CTA = () => {
 				<div className="sale-offer-bg bg-2">
 					<h5>Sale offer - <span>30% off</span></h5>
 					<h3>All types of premium quality tools</h3>
-					<a href="products.html" className="default-btn">
+					<a href="" className="default-btn">
 						<i className="ri-shopping-cart-line"></i>
-						Shop Now
+					Book a order
 					</a>
 				</div>
 			</div>

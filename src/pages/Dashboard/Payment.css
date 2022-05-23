@@ -24,6 +24,10 @@ checkout-area .billing-details {
   margin-bottom: 10px;
   color: #111111;
 }
+.faq-accordion.bg-light {
+	padding: 0 20px;
+	border-radius: 8px;
+}
 
 .checkout-area .billing-details .form-group label .required {
   color: #9C9C9C;
@@ -96,7 +100,6 @@ checkout-area .billing-details {
 }
 
 .checkout-area .faq-accordion {
-  margin-top: 30px;
   margin-bottom: 0;
 }
 
@@ -205,4 +208,95 @@ checkout-area .billing-details {
 
 .checkout-area .log-in-coupon-code p a {
   color: #ff6a00;
+}
+
+.order-content {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.order-content img {
+  margin-bottom: 20px;
+}
+
+.order-content h3 {
+  font-size: 20px;
+  margin-bottom: 17px;
+}
+
+.order-content span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.order-content p {
+  margin-bottom: 30px;
+}
+
+.item-order {
+  max-width: 960px;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.item-order h3 {
+  font-size: 20px;
+}
+
+.item-order .order-item-content {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #dddddd;
+}
+
+.item-order .order-item-content li {
+  border-bottom: 1px solid #dddddd;
+  padding: 15px 30px;
+}
+
+.item-order .order-item-content li:last-child {
+  border-bottom: none;
+}
+
+.item-order .order-item-content li span {
+  float: right;
+}
+
+.order-item-address {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #dddddd;
+  margin-bottom: 24px;
+}
+
+.order-item-address li {
+  border-bottom: 1px solid #dddddd;
+  padding: 15px 30px;
+  position: relative;
+  padding-left: 100px;
+}
+
+.order-item-address li.addresss {
+  padding-left: 30px;
+}
+
+.order-item-address li.addresss span {
+  position: unset;
+}
+
+.order-item-address li h3 {
+  font-size: 20px;
+}
+
+.order-item-address li:last-child {
+  border-bottom: none;
+}
+
+.order-item-address li span {
+  position: absolute;
+  top: 14px;
+  left: 30px;
 }

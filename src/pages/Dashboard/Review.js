@@ -18,7 +18,7 @@ const Review = () => {
     const img = "https://i.postimg.cc/HsrDdSnc/index.jpg";
 
     const data = { comments, rating, name, email, img };
-    axios.post("http://localhost:5000/review", data, {
+    axios.post("https://boiling-brushlands-60040.herokuapp.com/review", data, {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },

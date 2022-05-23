@@ -11,7 +11,7 @@ const CTA = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/reviews')
+    axios.get('https://boiling-brushlands-60040.herokuapp.com/reviews')
     .then(res => {
       setReviews(res.data)
     })

@@ -10,6 +10,7 @@ import review from "../../images/review.png";
 import { toast } from "react-toastify";
 
 const ProductDetails = () => {
+  const toOrderPage = useNavigate();
   const [user, loading, error] = useAuthState(auth);
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -73,6 +74,7 @@ const ProductDetails = () => {
         toast.success(`Your order successfully placed!`, {
           position: 'top-center'
         })
+        toOrderPage('/dashboard')
       };
       e.target.reset();
       handleClose();
@@ -128,17 +130,6 @@ const ProductDetails = () => {
                     </ul>
 
                     <div className="product-add-to-cart">
-                      <div className="input-counter">
-                        <span className="minus-btn">
-                          +
-                        </span>
-
-                        <input type="text" placeholder="2" />
-
-                        <span className="plus-btn">
-                         -
-                        </span>
-                      </div>
 
                       <button onClick={handleOrderForm} className="default-btn border-0">
                         <i className="ri-shopping-cart-line"></i>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import CustomLink from '../../hooks/CustomLink';
 import PageTitle from '../../hooks/PageTitle';
 import './Dashboard.css'
 
@@ -12,15 +13,17 @@ const Dashboard = () => {
 					<div className="col-lg-2">
 						<ul className="dashboard-navigation">
 							<li>
-								<h3>Dashboard</h3>
+								<h3 className="active">Dashboard</h3>
 							</li>
 
 							<li>
-								<Link to='/dashboard' className="active">My Orders</Link>
+								<CustomLink to='/dashboard'>My Orders</CustomLink>
 							</li>
-
 							<li>
-								<Link to='/dashboard/review'>Add a Review</Link>
+								<CustomLink to='/dashboard/review'>Add a Review</CustomLink>
+							</li>
+							<li>
+								<CustomLink to='/dashboard/profile'>My Profile</CustomLink>
 							</li>
 
 						</ul>

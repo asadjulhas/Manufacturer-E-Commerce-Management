@@ -127,7 +127,7 @@ const Orders = () => {
               </td>
     
               <td className="trash">
-              {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <button className="btn btn-xs bg-green-500 border-0 text-white">Payment done</button> }
+              {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <button className="btn btn-sm btn-success border-0 text-white">Payment done</button> }
               &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.productName)} className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
               </td>
             </tr> )}

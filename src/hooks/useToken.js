@@ -7,7 +7,7 @@ const useToken = (user) => {
     if(user?.email) {
       const logUser = {email: user?.email, name: user?.displayName}
       console.log('user inside usetoken', user.email)
-      axios.put(`http://localhost:5000/user/${user?.email}`, logUser)
+      axios.put(`https://boiling-brushlands-60040.herokuapp.com/user/${user?.email}`, logUser)
       .then(res => {
         if(res.data.accessToken) {
           localStorage.setItem('accessToken', res.data.accessToken);

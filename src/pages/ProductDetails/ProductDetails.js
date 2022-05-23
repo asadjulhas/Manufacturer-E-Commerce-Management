@@ -50,6 +50,11 @@ const ProductDetails = () => {
     setShow(true)
   }
 
+  const handleQuentity = (e) => {
+    console.log('Hello')
+    console.log(e.target.value)
+  }
+
   const handleOrder = (e) => {
     e.preventDefault();
 
@@ -207,7 +212,7 @@ const ProductDetails = () => {
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
      <Form.Label>Stock <span className="higlite">{product.stock},</span> <span>Minimum order:</span> <span className="higlite">{product.minOrder}</span></Form.Label>
-    <Form.Control required name='quantity' type="number" placeholder="Type your quantity" />
+    <Form.Control onChange={handleQuentity} required name='quantity' type="number" placeholder="Type your quantity" />
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">

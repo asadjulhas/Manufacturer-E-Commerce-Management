@@ -20,7 +20,7 @@ const CheckoutForm = ({service}) => {
 
    // Check Payment status 
    useEffect(() => {
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://boiling-brushlands-60040.herokuapp.com/order/${_id}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -38,7 +38,7 @@ console.log(data)
   },[])
   useEffect(() => {
     if(!tnID) {
-      fetch('http://localhost:5000/create-payment-intent', {
+      fetch('https://boiling-brushlands-60040.herokuapp.com/create-payment-intent', {
       method: 'POST',
       headers: {
         "content-type": "application/json",
@@ -109,7 +109,7 @@ if(intentError) {
   setSuccess(`Your Payment is Completed!`);
   setTnID(paymentIntent.id);
 
-  fetch(`http://localhost:5000/payment/${_id}`, {
+  fetch(`https://boiling-brushlands-60040.herokuapp.com/payment/${_id}`, {
     method: 'PUT',
     headers: {
       "content-type": "application/json",
@@ -121,8 +121,6 @@ if(intentError) {
       .then(res => {
         // console.log(res)
       })
-
-
 }
 
   };

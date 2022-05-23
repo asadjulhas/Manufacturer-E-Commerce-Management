@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51L1cHwAAX8jorUm97rVngApkylkvtoBRz8n8z
 const Payment = () => {
   const {id} = useParams();
   const accessToken = localStorage.getItem('accessToken')
-  const {data, isLoading, refetch} = useQuery([`order-${id}`], () => fetch(`http://localhost:5000/order/${id}`, {
+  const {data, isLoading, refetch} = useQuery([`order-${id}`], () => fetch(`https://boiling-brushlands-60040.herokuapp.com/order/${id}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`

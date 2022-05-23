@@ -67,7 +67,7 @@ const Orders = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`http://localhost:5000/order/${orderID}`, {
+    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/order/${orderID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

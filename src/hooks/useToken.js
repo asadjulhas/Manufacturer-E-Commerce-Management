@@ -1,20 +1,22 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import { useEffect, useState } from "react"
 
-const useToken = (userLogin) => {
-  const [token, setToken] = useState('')
+const useToken = (user) => {
+  const [token, setToken] = useState('');
   useEffect(()=>{
-    const getToken = async () => {
-      const email = userLogin?.email;
-    if(email) {
-      const {data} = await axios.post('https://boiling-brushlands-60040.herokuapp.com/login', {email});
-      localStorage.setItem('accessToken', data.accessToken)
-      setToken(data.accessToken)
-     }
+    if(user?.email) {
+      const logUser = {email: user?.email, name: user?.displayName}
+      console.log('user inside usetoken', user.email)
+      axios.put(`http://localhost:5000/user/${user?.email}`, logUser)
+      .then(res => {
+        if(res.data.accessToken) {
+          localStorage.setItem('accessToken', res.data.accessToken);
+          setToken(res.data.accessToken);
+        }
+      })
     }
-    getToken();
-  },[userLogin])
+  },[user]);
   return [token]
-};
+}
 
 export default useToken;

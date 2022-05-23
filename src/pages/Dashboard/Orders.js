@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -45,13 +45,20 @@ const Orders = () => {
   setData(data);
   setLoad(false)
  } else {
-  //  signOut(auth);
-  //  localStorage.removeItem('accessToken')
+   signOut(auth);
+   localStorage.removeItem('accessToken')
  }
    
   })
   },[deleteAlert])
 
+  if(load) {
+    return (
+      <div className="spinner">
+      <Spinner animation="grow" variant="danger" />
+     </div>
+    )
+  }
 
   const handleCancle = (id, name) => {
     setName(name)
@@ -130,8 +137,11 @@ const Orders = () => {
         </table>
       </div>
     </form>
-    </div> : <div className="cart-area recent-order">
-    <h3 className='text-danger'>You have no order</h3>
+    </div> : <div className="cart-area recent-order text-center mt-5">
+    <h3 className='text-danger mb-3'>You have no order</h3>
+    <Link to='/' className="default-btn two">
+							Place a order
+						</Link>
     </div>}
     
     <DeleteMOdal name={name} show={show} handleClose={handleClose} deleteConfirm={deleteConfirm}  />

@@ -1,13 +1,14 @@
 import axios from "axios";
 import './ProductDetails.css'
 import React, { useEffect, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Form, Modal, Spinner } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate, useParams } from "react-router-dom";
 import auth from "../../firebaseinit";
 import PageTitle from "../../hooks/PageTitle";
 import review from "../../images/review.png";
 import { toast } from "react-toastify";
+import LoadingSpinner from "../../components/Spinner/LoadingSpinner";
 
 const ProductDetails = () => {
   const toOrderPage = useNavigate();
@@ -15,6 +16,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const accessToken = localStorage.getItem('accessToken')
+  const [load, setLoad] = useState(false)
 
   // Modal handle
   const [show, setShow] = useState(false);
@@ -24,6 +26,7 @@ const ProductDetails = () => {
   const [formAlert, setFormAlert] = useState('');
 
   useEffect(() => {
+    setLoad(true)
     axios(`https://boiling-brushlands-60040.herokuapp.com/product/${id}`,{
       headers: {
         'authorization': `Bearer ${accessToken}`
@@ -31,8 +34,17 @@ const ProductDetails = () => {
     })
     .then((res) => {
       setProduct(res.data);
+      setLoad(false)
     });
   }, []);
+
+  if(load) {
+    return (
+      <div className="spinner">
+      <Spinner animation="grow" variant="danger" />
+     </div>
+    )
+  }
 
   const handleOrderForm = () => {
     setShow(true)

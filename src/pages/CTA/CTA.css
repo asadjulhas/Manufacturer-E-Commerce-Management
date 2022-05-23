@@ -70,3 +70,9 @@
 	background: #ff6a00;
 	border: none;
 }
+.owl-dots {
+	display: none;
+}
+.owl-nav {
+	display: none;
+}

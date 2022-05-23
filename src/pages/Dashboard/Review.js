@@ -45,7 +45,7 @@ const Review = () => {
             name="comments"
             as="textarea"
             placeholder="Leave a comment here"
-            style={{ height: "100px" }}
+            style={{ height: "150px" }}
           />
         </FloatingLabel>
 

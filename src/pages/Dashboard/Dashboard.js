@@ -9,7 +9,7 @@ const Dashboard = () => {
       <PageTitle title='My Orders'/>
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-3">
+					<div className="col-lg-2">
 						<ul className="dashboard-navigation">
 							<li>
 								<h3>Dashboard</h3>
@@ -26,7 +26,7 @@ const Dashboard = () => {
 						</ul>
 					</div>
 
-					<div className="col-lg-9">
+					<div className="col-lg-10">
 						
 					<Outlet/>
 

@@ -1,22 +1,27 @@
+import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import DeleteMOdal from '../../components/Modal/DeleteMOdal';
 import auth from '../../firebaseinit';
 
 const Orders = () => {
   const [name, setName] = useState('')
-  const [specialty, setSpecialty] = useState('')
-  const [doctorID, setDoctorID] = useState('')
-  const [deleteDoctor, setDeleteDoctor] = useState(false)
+  const [orderID, setOrderID] = useState('')
   const [deleteAlert, setDeleteAlert] = useState(false)
   const [load, setLoad] = useState(false)
 
   const [user, loading, userror] = useAuthState(auth);
   const accessToken = localStorage.getItem('accessToken')
   const [data, setData] = useState([]);
+
+  // Delete Modal
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(()=> {
     setLoad(true)
@@ -47,7 +52,30 @@ const Orders = () => {
   })
   },[deleteAlert])
 
-  console.log(data)
+
+  const handleCancle = (id, name) => {
+    setName(name)
+    setOrderID(id);
+    handleShow()
+  }
+
+  const deleteConfirm = () => {
+    axios.delete(`http://localhost:5000/order/${orderID}`, {
+      headers: {
+        'authorization': `Bearer ${accessToken}`
+      }
+    })
+    .then(res => {
+      if (res.data.deletedCount === 1) {
+        toast.success('Cancel Order Successfully!', {
+          position: 'top-center'
+        })
+        setDeleteAlert(!deleteAlert);
+        handleClose();
+      }
+    })
+  }
+
   return (
     <>
     {data.length > 0 ?
@@ -93,7 +121,7 @@ const Orders = () => {
     
               <td className="trash">
               {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <button className="btn btn-xs bg-green-500 border-0 text-white">Payment done</button> }
-              &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
+              &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.productName)} className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
               </td>
             </tr> )}
     
@@ -105,6 +133,8 @@ const Orders = () => {
     </div> : <div className="cart-area recent-order">
     <h3 className='text-danger'>You have no order</h3>
     </div>}
+    
+    <DeleteMOdal name={name} show={show} handleClose={handleClose} deleteConfirm={deleteConfirm}  />
     </>
   );
 };

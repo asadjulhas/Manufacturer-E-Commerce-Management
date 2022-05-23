@@ -16,7 +16,8 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const accessToken = localStorage.getItem('accessToken')
-  const [load, setLoad] = useState(false)
+  const [load, setLoad] = useState(false);
+  const [disable, setDisable] = useState(false)
 
   // Modal handle
   const [show, setShow] = useState(false);
@@ -51,8 +52,25 @@ const ProductDetails = () => {
   }
 
   const handleQuentity = (e) => {
-    console.log('Hello')
-    console.log(e.target.value)
+    const quantity = e.target.value
+    if(quantity < product.minOrder) {
+      setDisable(true)
+      setFormAlert(`Quantity can't less than ${product.minOrder}`);
+      return;
+    } else {
+      setDisable(false)
+      setFormAlert('')
+    }
+
+    if(quantity > product.stock) {
+      setDisable(true)
+      setFormAlert(`Quantity can't more than ${product.stock}`)
+      return;
+    } else {
+      setDisable(false)
+      setFormAlert('')
+    }
+
   }
 
   const handleOrder = (e) => {
@@ -224,8 +242,8 @@ const ProductDetails = () => {
   </Form.Group>
   
   <p className='text-danger'>{formAlert}</p>
-  <Button className='btn-style2' variant="primary" type="submit">
-    Place order
+  <Button disabled={disable} className='btn-style2' variant="primary" type="submit">
+    Place orderrr
   </Button>
 </Form>
         </Modal.Body>

@@ -17,7 +17,8 @@ const ProductDetails = () => {
   const [product, setProduct] = useState([]);
   const accessToken = localStorage.getItem('accessToken')
   const [load, setLoad] = useState(false);
-  const [disable, setDisable] = useState(false)
+  const [disable, setDisable] = useState(false);
+  const [total, setTotal] = useState('')
 
   // Modal handle
   const [show, setShow] = useState(false);
@@ -52,23 +53,26 @@ const ProductDetails = () => {
   }
 
   const handleQuentity = (e) => {
-    const quantity = e.target.value
-    if(quantity < product.minOrder) {
+    const quantity = parseInt(e.target.value)
+    if(quantity <  parseInt(product.minOrder)) {
       setDisable(true)
-      setFormAlert(`Quantity can't less than ${product.minOrder}`);
+      setFormAlert(`Quantity can't less than ${parseInt(product.minOrder)}`);
+      setTotal(0);
       return;
     } else {
       setDisable(false)
       setFormAlert('')
+      setTotal(quantity * product.price)
     }
 
-    if(quantity > product.stock) {
+    if(quantity > parseInt(product.stock)) {
       setDisable(true)
-      setFormAlert(`Quantity can't more than ${product.stock}`)
-      return;
+      setFormAlert(`Quantity can't more than ${parseInt(product.stock)}`)
+      setTotal(0)
     } else {
       setDisable(false)
-      setFormAlert('')
+      setFormAlert('');
+      setTotal(quantity * product.price)
     }
 
   }
@@ -87,15 +91,15 @@ const ProductDetails = () => {
     const payment = false;
     const img = product.img;
 
-    if(quantity < product.minOrder) {
-      setFormAlert(`Quantity can't less than ${product.minOrder}`)
+    if(quantity < parseInt(product.minOrder)) {
+      setFormAlert(`Quantity can't less than ${parseInt(product.minOrder)}`)
       return;
     } else {
       setFormAlert('')
     }
 
-    if(quantity > product.stock) {
-      setFormAlert(`Quantity can't more than ${product.stock}`)
+    if(quantity > parseInt(product.stock)) {
+      setFormAlert(`Quantity can't more than ${parseInt(product.stock)}`)
       return;
     } else {
       setFormAlert('')
@@ -109,13 +113,12 @@ const ProductDetails = () => {
         toast.success(`Your order successfully placed!`, {
           position: 'top-center'
         })
-        toOrderPage('/dashboard')
+        toOrderPage('/dashboard/order')
       };
       e.target.reset();
       handleClose();
     })
   }
-
   return (
     <section className="product-details-area ptb-54">
       <PageTitle title='Book a Order'/>
@@ -148,7 +151,7 @@ const ProductDetails = () => {
                         <del>${Math.ceil(product.price * 1.3)}</del>
                       </span>
                       <span className="in-stock">
-                        In Stock ({product.stock} Items)
+                        In Stock ({parseInt(product.stock)} Items)
                       </span>
                     </div>
 
@@ -157,7 +160,7 @@ const ProductDetails = () => {
                         <p>{product.description}</p>
                       </li>
                       <li>
-                        <span>Minimum order:</span> {product.minOrder}
+                        <span>Minimum order:</span> {parseInt(product.minOrder)}
                       </li>
                       <li>
                         <span>Type:</span> {product.type}
@@ -221,7 +224,7 @@ const ProductDetails = () => {
         <Form onSubmit={handleOrder}>
 
   <Form.Group className="mb-3" controlId="formBasicPassword"> 
-  <Form.Label>Stock <span className="higlite">{product.stock},</span> <span>Minimum order:</span> <span className="higlite">{product.minOrder}</span></Form.Label>
+  <Form.Label>Stock <span className="higlite">{parseInt(product.stock)},</span> <span>Minimum order:</span> <span className="higlite">{parseInt(product.minOrder)}</span></Form.Label>
     <Form.Control required name='name' readOnly disabled type="text" value={user.displayName} />
   </Form.Group>
 
@@ -242,9 +245,12 @@ const ProductDetails = () => {
   </Form.Group>
   
   <p className='text-danger'>{formAlert}</p>
+  
+  <div className="d-flex justify-content-between">
   <Button disabled={disable} className='btn-style2' variant="primary" type="submit">
     Place orderrr
-  </Button>
+  </Button> {total > 0 ? <p className='text-success'>Total: <b>${total}</b>  </p> : ''}
+  </div>
 </Form>
         </Modal.Body>
         <Modal.Footer>

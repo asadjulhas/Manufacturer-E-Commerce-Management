@@ -17,8 +17,6 @@ const Products = () => {
     return <LoadingSpinner className="homepage_products" />;
   }
 
-console.log(data[0])
-
   return (
     <section className="featured-products-area">
       <div className="container">

@@ -12,7 +12,7 @@ import './Dashboard.css'
 const Dashboard = () => {
   const accessToken = localStorage.getItem('accessToken')
   const [user, loading, error] = useAuthState(auth);
-  const {data: admin, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`http://localhost:5000/check-admin/${user.email}`, {
+  const {data: admin, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`https://boiling-brushlands-60040.herokuapp.com/check-admin/${user.email}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -52,7 +52,7 @@ const Dashboard = () => {
 							</li> : ''}
 
 							{admin ? <li>
-								<CustomLink to='/dashboard/manage-orders'>Add Product</CustomLink>
+								<CustomLink to='/dashboard/add-product'>Add Product</CustomLink>
 							</li> : ''}
 
               {admin ? <li>
@@ -60,7 +60,7 @@ const Dashboard = () => {
 							</li> : ''}
 
 							{admin ? <li>
-								<CustomLink to='/dashboard/manage-orders'>Make Admin</CustomLink>
+								<CustomLink to='/dashboard/make-admin'>Make Admin</CustomLink>
 							</li> : ''}
               {admin ? '' : <li>
 								<CustomLink to='/dashboard/review'>Add a Review</CustomLink>

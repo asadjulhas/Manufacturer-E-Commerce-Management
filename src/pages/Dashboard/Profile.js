@@ -19,7 +19,7 @@ const Profile = () => {
   const [formAlert, setFormAlert] = useState("");
   const accessToken = localStorage.getItem('accessToken')
 
-  const {data, isLoading, refetch} = useQuery(['user'], () => fetch(`http://localhost:5000/user/${lgUser.email}`, {
+  const {data, isLoading, refetch} = useQuery(['user'], () => fetch(`https://boiling-brushlands-60040.herokuapp.com/user/${lgUser.email}`, {
     headers: {
       'authorization': `Bearer ${accessToken}`
     }
@@ -53,7 +53,7 @@ const Profile = () => {
     const linkedin = e.target.linkedin.value || oldLinkedin;
 
     const data = {email, phone, address, linkedin };
-    axios.post("http://localhost:5000/update-profile", data, {
+    axios.post("https://boiling-brushlands-60040.herokuapp.com/update-profile", data, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

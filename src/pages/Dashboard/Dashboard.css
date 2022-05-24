@@ -341,3 +341,9 @@
 .update_profile .form-control {
 	height: 45px !important;
 }
+.product_input input {
+	height: 40px;
+}
+.form-control.text_area {
+	height: inherit;
+}

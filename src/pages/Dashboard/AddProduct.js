@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 import auth from "../../firebaseinit";
+import PageTitle from "../../hooks/PageTitle";
 
 const AddProduct = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -47,9 +48,12 @@ const AddProduct = () => {
                 const imageUrl = image.data.url;
                 const product = {
                   name: data.name,
-                  email: data.email,
-                  specialty: data.specialty,
-                  image: imageUrl,
+                  description: data.description,
+                  minOrder: data.minOrder,
+                  price: data.price,
+                  stock: data.stock,
+                  type: data.type,
+                  img: imageUrl,
                 };
                 axios
                   .post("https://boiling-brushlands-60040.herokuapp.com/product", product, {
@@ -80,22 +84,23 @@ const AddProduct = () => {
   };
   return (
     <div className="product_form w-50">
+      <PageTitle title='Add Product' />
        <h3 className="fs-6 mb-2">Add a Product</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="form-control mb-3 w-full max-w-xs">
+        <div className="mb-3 product_input">
           <input
             placeholder="Product name"
-            className="input input-bordered"
+            className="form-control"
             {...register("name", { required: true })}
           />
           <span className="text-[red] text-sm mt-1">
             {errors.firstName?.type === "required" && "Product name is required"}
           </span>
         </div>
-        <div className="form-control mb-3 w-full max-w-xs">
-          <textarea
+        <div className="mb-3 product_input">
+          <textarea rows={3}
             placeholder="Product description"
-            className="input input-bordered"
+            className="form-control text_area"
             {...register("description", { required: true })}
           ></textarea>
           <span className="text-[red] text-sm mt-1">
@@ -103,42 +108,68 @@ const AddProduct = () => {
           </span>
         </div>
 
-        <div className="form-control mb-3 w-full max-w-xs">
-          <input
+        <div className="mb-3 product_input">
+          <input type='number'
             placeholder="Product price"
-            className="input input-bordered"
-            {...register("name", { required: true })}
+            className="form-control"
+            {...register("price", { required: true })}
           />
           <span className="text-[red] text-sm mt-1">
-            {errors.firstName?.type === "required" && "Product name is required"}
+            {errors.firstName?.type === "required" && "Product price is required"}
+          </span>
+        </div>
+
+        <div className="mb-3 product_input">
+          <input type='number'
+            placeholder="Minium order range"
+            className="form-control"
+            {...register("minOrder", { required: true })}
+          />
+          <span className="text-[red] text-sm mt-1">
+            {errors.firstName?.type === "required" && "Minium order range is required"}
           </span>
         </div>
         
-        <div className="form-control mb-3">
+
+        <div className="mb-3 product_input">
+          <input type='number'
+            placeholder="Available stock"
+            className="form-control"
+            {...register("stock", { required: true })}
+          />
+          <span className="text-[red] text-sm mt-1">
+            {errors.firstName?.type === "required" && "Available stock is required"}
+          </span>
+        </div>
+        
+        <div className="mb-3 product_input">
           <select
-            className="select w-full input-bordered max-w-xs"
-            {...register("specialty", { required: true })}
+            className="form-select"
+            {...register("type", { required: true })}
           >
             <option disabled defaultValue={true}>
-              Product Specialty
+              Product type
             </option>
-              <option>1</option>
+              <option>hot</option>
+              <option>new</option>
           </select>
           <span className="text-[red] text-sm mt-1">
             {errors.specialty?.type === "required" && "Specialty is required"}
           </span>
         </div>
-        <div className="form-control mb-3 w-full max-w-xs">
+        <div className="mb-3 product_input">
           <input
             type="file"
-            className="input input-bordered pt-[10px]"
+            className="form-control pt-[10px]"
             {...register("image", { required: true })}
           />
           <span className="text-[red] text-sm mt-1">
             {errors.firstName?.type === "required" && "Image is required"}
           </span>
         </div>
-        <button className={`btn btn-primary w-80 ${loader ? 'loading' : ''}`}>Add Product</button>
+        <button className={`btn btn-primary w-80 ${loader ? 'loading' : ''}`}>
+        {loader ? <><span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp;&nbsp;</> : '' }
+          Add Product</button>
       </form>
     </div>
   );

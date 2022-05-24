@@ -68,8 +68,8 @@ const Profile = () => {
       handleClose();
     });
   };
-
   const img = lgUser.photoURL || "https://templates.envytheme.com/ehay/default/assets/images/profile-img.jpg";
+
   return (
     <>
       <div className="profile-bar">

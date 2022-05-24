@@ -16,7 +16,7 @@ const CTA = () => {
       setReviews(res.data)
     })
   },[])
-
+  
   return (
     <section className="sale-offer-area">
 			<div className="container">

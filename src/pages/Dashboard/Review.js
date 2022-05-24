@@ -15,7 +15,7 @@ const Review = () => {
     const rating = e.target.rating.value;
     const name = user.displayName;
     const email = user.email;
-    const img = "https://i.postimg.cc/HsrDdSnc/index.jpg";
+    const img = user.photoURL || "https://i.postimg.cc/HsrDdSnc/index.jpg";
 
     const data = { comments, rating, name, email, img };
     axios.post("https://boiling-brushlands-60040.herokuapp.com/review", data, {

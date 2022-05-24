@@ -6,7 +6,6 @@ const useToken = (user) => {
   useEffect(()=>{
     if(user?.email) {
       const logUser = {email: user?.email, name: user?.displayName}
-      console.log('user inside usetoken', user.email)
       axios.put(`https://boiling-brushlands-60040.herokuapp.com/user/${user?.email}`, logUser)
       .then(res => {
         if(res.data.accessToken) {

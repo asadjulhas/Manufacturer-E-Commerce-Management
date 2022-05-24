@@ -220,7 +220,8 @@ const ProductDetails = () => {
         <Modal.Body>
         <Form onSubmit={handleOrder}>
 
-  <Form.Group className="mb-3" controlId="formBasicPassword">
+  <Form.Group className="mb-3" controlId="formBasicPassword"> 
+  <Form.Label>Stock <span className="higlite">{product.stock},</span> <span>Minimum order:</span> <span className="higlite">{product.minOrder}</span></Form.Label>
     <Form.Control required name='name' readOnly disabled type="text" value={user.displayName} />
   </Form.Group>
 
@@ -229,7 +230,6 @@ const ProductDetails = () => {
   </Form.Group>
 
   <Form.Group className="mb-3" controlId="formBasicPassword">
-     <Form.Label>Stock <span className="higlite">{product.stock},</span> <span>Minimum order:</span> <span className="higlite">{product.minOrder}</span></Form.Label>
     <Form.Control onChange={handleQuentity} required name='quantity' type="number" placeholder="Type your quantity" />
   </Form.Group>
 

@@ -21,6 +21,7 @@ import ManageOrders from './pages/Dashboard/ManageOrders';
 import RequireAdmin from './hooks/RequireAdmin';
 import Admin from './pages/Dashboard/Admin';
 import AddProduct from './pages/Dashboard/AddProduct';
+import ManageOrder from './pages/Dashboard/ManageOrder';
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
          <Route path='add-product' element={
            <RequireAdmin>
              <AddProduct/>
+           </RequireAdmin>
+         }/>
+         <Route path='manage-order' element={
+           <RequireAdmin>
+             <ManageOrder/>
            </RequireAdmin>
          }/>
          <Route index element={<Profile/>}/>

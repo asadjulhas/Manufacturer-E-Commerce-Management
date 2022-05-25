@@ -48,7 +48,7 @@ const Dashboard = () => {
 							</li>  }
 
 							{admin ? <li>
-								<CustomLink to='/dashboard/manage-orders'>Manage Orders</CustomLink>
+								<CustomLink to='/dashboard/manage-order'>Manage Orders</CustomLink>
 							</li> : ''}
 
 							{admin ? <li>

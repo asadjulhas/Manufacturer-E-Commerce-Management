@@ -1,64 +1,36 @@
 import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
-import { Button, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import DeleteMOdal from '../../components/Modal/DeleteMOdal';
+import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
 import auth from '../../firebaseinit';
+import PageTitle from '../../hooks/PageTitle';
 
-const Orders = () => {
+const ManageProducts = () => {
   const [name, setName] = useState('')
   const [orderID, setOrderID] = useState('')
   const [deleteAlert, setDeleteAlert] = useState(false)
-  const [load, setLoad] = useState(false)
-
-  const [user, loading, userror] = useAuthState(auth);
   const accessToken = localStorage.getItem('accessToken')
-  const [data, setData] = useState([]);
 
-  // Delete Modal
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+   // Delete Modal
+   const [show, setShow] = useState(false);
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
 
-  useEffect(()=> {
-    setLoad(true)
-    fetch(`https://boiling-brushlands-60040.herokuapp.com/my-orders?email=${user?.email}`, {
-    method: 'GET',
-    headers: {
-      'authorization': `Bearer ${accessToken}`
-    }
-  }) 
-  .then(res => {
-  if(res.status === 401 || res.status === 403) {
-    toast.error('Forbidden access', {
-      position: "top-center",
-    })
-  }
-   return res.json()
-  })
-  .then(data => {
-    
- if(!data.Message) {
-  setData(data);
-  setLoad(false)
- } else {
-   signOut(auth);
-   localStorage.removeItem('accessToken')
- }
-   
-  })
-  },[deleteAlert])
-
-  if(load) {
-    return (
-      <div className="spinner">
-      <Spinner animation="grow" variant="danger" />
-     </div>
+  const { data, isLoading, refetch } = useQuery(["products"], () =>
+    fetch("https://boiling-brushlands-60040.herokuapp.com/product").then(
+      (res) => res.json()
     )
+  );
+  if (isLoading) {
+    return <LoadingSpinner className="homepage_products" />;
   }
+
 
   const handleCancle = (id, name) => {
     setName(name)
@@ -67,16 +39,17 @@ const Orders = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/order/${orderID}`, {
+    axios.delete(`http://localhost:5000/product/${orderID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
     })
     .then(res => {
       if (res.data.deletedCount === 1) {
-        toast.success('Cancel Order Successfully!', {
+        toast.success('Product delete Successfully!', {
           position: 'top-center'
         })
+        refetch()
         setDeleteAlert(!deleteAlert);
         handleClose();
       }
@@ -85,9 +58,10 @@ const Orders = () => {
 
   return (
     <>
+    <PageTitle title='Manage orders'/>
     {data.length > 0 ?
        <div className="cart-area recent-order">
-    <h3>Recent Order</h3>
+    <h3>All the products</h3>
     <form className="cart-controller mb-0">
       <div className="cart-table table-responsive">
         <table className="table table-bordered">
@@ -95,9 +69,10 @@ const Orders = () => {
             <tr>
               <th scope="col">Product</th>
               <th scope="col"></th>
-              <th scope="col">Quantity</th>
-              <th scope="col">Status</th>
-              <th scope="col">Total</th>
+              <th scope="col">Price</th>
+              <th scope="col">MinOrder</th>
+              <th scope="col">stock</th>
+              <th scope="col">type</th>
               <th scope="col">Action</th>
             </tr>
           </thead> 
@@ -106,29 +81,33 @@ const Orders = () => {
             {data.map(o =>  <tr key={o._id}>
               <td className="product-thumbnail">
                 <a>
-                  <img width='40' src={o.img} alt={o.productName}/>
+                  <img width='30' src={o.img} alt={o.name}/>
                 </a>
               </td>
     
               <td className="product-name">
-                <span>{o.productName.slice(0, 40)}...</span>
+                <span>{o.name.slice(0, 20)}</span>
+              </td>
+    
+              <td className="product-name">
+                <span>$ {o.price}</span>
               </td>
     
               <td className="product-price">
-                <span className="unit-amount">{o.quantity}</span>
+                <span className="unit-amount">{o.minOrder}</span>
+              </td>
+    
+              <td className="product-price">
+                <span className="unit-amount">{o.stock}</span>
               </td>
     
               <td className="product-subtotal">
-                <span className="subtotal-amount">{o.payment ? 'Paid' : 'Not Paid'}</span>
+              <span className="unit-amount">{o.type}</span>
               </td>
     
-              <td className="product-subtotal">
-                <span className="subtotal-amount">${o.price}</span>
-              </td>
     
               <td className="trash">
-              {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <Link to='' className={`btn btn-sm btn-${o.status ? 'info' : 'success'} border-0 text-white`}>{o.status ? 'Shipped' : 'Payment done' }</Link> }
-              &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.productName)} className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
+              <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.name)} className="btn btn-sm btn-danger border-0">Delete</label> 
               </td>
             </tr> )}
     
@@ -143,10 +122,10 @@ const Orders = () => {
 							Place a order
 						</Link>
     </div>}
-    
+  
     <DeleteMOdal name={name} show={show} handleClose={handleClose} deleteConfirm={deleteConfirm}  />
     </>
   );
 };
 
-export default Orders;
+export default ManageProducts;

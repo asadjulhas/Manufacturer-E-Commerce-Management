@@ -79,7 +79,7 @@ const Profile = () => {
               <img src={img} alt={lgUser.displayName} />
 
               <h3>
-                <a href="edit-profile.html">{lgUser.displayName}</a>
+                <a>{lgUser.displayName}</a>
               </h3>
               <a href="mailto:contact@ehay.com">{lgUser.email}</a>
               {data.phone ? <a>{data.phone}</a> : ''}

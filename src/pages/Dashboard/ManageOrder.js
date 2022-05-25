@@ -95,7 +95,7 @@ const ManageOrder = () => {
           <tbody>
             {data.map(o =>  <tr key={o._id}>
               <td className="product-thumbnail">
-                <a href="product-details.html">
+                <a>
                   <img width='30' src={o.img} alt={o.productName}/>
                 </a>
               </td>

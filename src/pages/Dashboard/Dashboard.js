@@ -21,13 +21,22 @@ const Dashboard = () => {
     .then(res => res.json())
   )
 
-  if(loading || isLoading) {
+  if(loading) {
     return (
       <div className="spinner">
        <Spinner animation="grow" variant="danger" />
       </div>
     )
   }
+
+  // if(isLoading) {
+  //   return (
+  //     <div className="spinner">
+  //      <Spinner animation="grow" variant="danger" />
+  //     </div>
+  //   )
+  // }
+
   return (
     <section className="dashboard-area ptb-54">
       <PageTitle title='My Orders'/>

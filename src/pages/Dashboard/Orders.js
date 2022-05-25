@@ -106,12 +106,12 @@ const Orders = () => {
             {data.map(o =>  <tr key={o._id}>
               <td className="product-thumbnail">
                 <a href="product-details.html">
-                  <img width='50' src={o.img} alt={o.productName}/>
+                  <img width='40' src={o.img} alt={o.productName}/>
                 </a>
               </td>
     
               <td className="product-name">
-                <span>{o.productName}</span>
+                <span>{o.productName.slice(0, 40)}...</span>
               </td>
     
               <td className="product-price">
@@ -127,7 +127,7 @@ const Orders = () => {
               </td>
     
               <td className="trash">
-              {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <button className="btn btn-sm btn-success border-0 text-white">Payment done</button> }
+              {!o.payment ? <Link to={`/dashboard/payment/${o._id}`} className="btn btn-sm btn-primary border-0">{`Pay $${o.price}`}</Link> : <Link to='' className={`btn btn-sm btn-${o.status ? 'info' : 'success'} border-0 text-white`}>{o.status ? 'Shipped' : 'Payment done' }</Link> }
               &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.productName)} className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
               </td>
             </tr> )}

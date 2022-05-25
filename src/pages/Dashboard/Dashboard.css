@@ -347,3 +347,8 @@
 .form-control.text_area {
 	height: inherit;
 }
+.product_form.w-50 {
+	background: #FF6A000F;
+	padding: 13px 20px;
+	border-radius: 7px;
+} 

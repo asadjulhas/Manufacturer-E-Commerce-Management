@@ -10,10 +10,10 @@ import PageTitle from '../../hooks/PageTitle';
 
 const ManageOrder = () => {
   const [load, setLoad] = useState(false)
-
   const [user, loading, userror] = useAuthState(auth);
-  const accessToken = localStorage.getItem('accessToken')
+  const accessToken = localStorage.getItem('accessToken');
   const [data, setData] = useState([]);
+  const [orderFetch, setOrderFetch] = useState(false)
 
 
   useEffect(()=> {
@@ -43,7 +43,25 @@ const ManageOrder = () => {
  }
    
   })
-  },[])
+  },[orderFetch])
+
+  const handleShiped = (id) => {
+    fetch(`http://localhost:5000/status/${id}`, {
+    method: 'PUT',
+    headers: {
+      'authorization': `Bearer ${accessToken}`
+    },
+  })
+  .then(ress => ress.json())
+      .then(res => {
+        if(res.acknowledged) {
+        toast.success('Order status change to shipped', {
+          position: 'top-center'
+        })
+        }
+        setOrderFetch(!orderFetch)
+      })
+  }
 
   if(load) {
     return (
@@ -95,7 +113,7 @@ const ManageOrder = () => {
               </td>
     
               <td className="product-subtotal">
-                <span className="subtotal-amount">{o.payment ? <span className="text-success">Paid</span> : 'Not Paid'}</span>
+                <span className="subtotal-amount">{o.payment ? <span className="text-success">Paid{o.status ? '(shipped)':''}</span> : <span className="text-danger">Not Paid</span>}</span>
               </td>
     
               <td className="product-subtotal">
@@ -103,7 +121,7 @@ const ManageOrder = () => {
               </td>
     
               <td className="trash">
-              {!o.payment ? <Link to='' className="btn btn-sm btn-primary border-0">Unpaid</Link> : <button className="btn btn-sm btn-success border-0 text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on top">Pending</button> }
+              {!o.payment ? <Link to='' className="btn btn-sm btn-primary border-0">Unpaid</Link> : o.status ? <Link to='' className="btn btn-sm btn-info border-0 text-white">shipped</Link> : <Link to='' onClick={()=>handleShiped(o._id)} title='Click to shipped' className="btn btn-sm btn-success border-0 text-white">Pending</Link> }
               </td>
             </tr> )}
     

@@ -10,7 +10,7 @@ const CheckoutForm = ({service}) => {
   const {price: amount, clientName, email, address, phone, _id} = service;
   const [clientSecret, setClientSecret] = useState("");
   const stripe = useStripe();
-  const [loader, setLoader] = useState(false)
+  const [loaderBtn, setLoader] = useState(false)
   const elements = useElements();
   const [carderror, setCarderror] = useState('')
   const [success, setSuccess] = useState('')
@@ -144,7 +144,7 @@ if(intentError) {
         }}
       />
       <button className="btn btn-sm btn-primary my-3"  type="submit" disabled={!stripe || !clientSecret}>
-      {loader ? <><span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp;&nbsp;</> : '' }  
+      {loaderBtn ? <><span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp;&nbsp;</> : '' }  
         Pay Now ${amount}
         </button>
       {carderror && <p className='text-danger mb-5'>{carderror}</p>}

@@ -300,3 +300,6 @@ checkout-area .billing-details {
   top: 14px;
   left: 30px;
 }
+.faq-accordion.bg-light {
+  background: #ff6a001f !important;
+}

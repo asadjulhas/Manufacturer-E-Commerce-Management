@@ -42,7 +42,7 @@ const UpdateProduct = ({
       fstock,
       ftype
     };
-    axios.put("http://localhost:5000/product", product, {
+    axios.put("https://boiling-brushlands-60040.herokuapp.com/product", product, {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },
@@ -149,7 +149,7 @@ const UpdateProduct = ({
                 ) : (
                   ""
                 )}
-                Add Product
+                Update Product
               </button>
 
               <Button variant="secondary" onClick={handleCloseStock}>

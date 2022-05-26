@@ -25,7 +25,7 @@ const ManageOrder = () => {
 
   useEffect(()=> {
     setLoad(true)
-    fetch(`http://localhost:5000/orders`, {
+    fetch(`https://boiling-brushlands-60040.herokuapp.com/orders`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -53,7 +53,7 @@ const ManageOrder = () => {
   },[orderFetch])
 
   const handleShiped = (id) => {
-    fetch(`http://localhost:5000/status/${id}`, {
+    fetch(`https://boiling-brushlands-60040.herokuapp.com/status/${id}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -114,7 +114,7 @@ const ManageOrder = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th className='d-none d-sm-block' scope="col">#</th>
               <th scope="col">Name</th>
               <th scope="col">User</th>
               <th scope="col">Quantity</th>
@@ -126,7 +126,7 @@ const ManageOrder = () => {
                               
           <tbody>
             {data.map((o, index) =>  <tr key={o._id}>
-              <td className="product-thumbnail">
+              <td className="product-thumbnail d-none d-sm-block">
                 {index+1}
               </td>
     

@@ -35,3 +35,28 @@
 .awsam_icon svg:hover{
    color: #FFFFFF;
 }
+@media only screen and (min-width: 767px) and (max-width: 991px) { 
+  .count_down {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  .counter_item h2 {
+    font-size: 20px;
+  }
+  .counter_item p {
+    font-size: 12px;
+  }
+  .awsam_icon svg {
+    font-size: 2em;
+  }
+  .awsam_icon svg {
+    margin-top: 25px;
+  }
+  .counter_item p {
+    margin-bottom: 5px;
+  }
+
+
+
+
+}

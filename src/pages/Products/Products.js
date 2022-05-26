@@ -26,7 +26,7 @@ const Products = () => {
 
         <div className="row">
           {data?.map((p) => (
-            <div key={p._id} className="col-xl-3 col-sm-6">
+            <div key={p._id} className="col-xl-3 col-md-4 col-sm-6">
               <div className="single-products">
                 <div className="product-img">
                   <img src={p.img} alt="Image" />

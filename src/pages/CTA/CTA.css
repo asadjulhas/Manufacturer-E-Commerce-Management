@@ -76,3 +76,31 @@
 .owl-nav {
 	display: none;
 }
+
+@media only screen and (min-width: 767px) and (max-width: 991px) { 
+  .sale-offer-bg {
+    padding: 50px;
+  }
+
+}
+
+/* Mobile Layout: 320px. */
+  @media only screen and (max-width: 767px) { 
+    .sale-offer-bg {
+      padding: 20px;
+    }
+    .sale-offer-bg h5 {
+      margin-top: 25px;
+    }
+    .sale-offer-bg h3 {
+      font-size: 19px;
+      margin-bottom: 15px;
+    }
+    .countdown_area {
+      margin-top: 0px;
+    }
+    .count_down {
+      margin-bottom: 35px;
+    }
+  
+  }

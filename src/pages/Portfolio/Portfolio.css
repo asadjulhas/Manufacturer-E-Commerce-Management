@@ -20,3 +20,30 @@ span.span_valuse {
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
+
+  /* Mobile Layout: 320px. */
+  @media only screen and (max-width: 767px) { 
+    .edit-profiles {
+      display: none;
+    }
+    .span_valuse {
+      font-size: 15px;
+    }
+    .span_valuse.project_details {
+      font-size: 14px;
+    }
+    .billing-address-bar h3 {
+      font-size: 15px !important;
+    }
+  
+  }
+
+  
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 767px) and (max-width: 991px) { 
+  .edit-profiles > button.default-btn {
+    font-size: 11px !important;
+    padding: 14px 8px !important;
+  }
+}

@@ -29,7 +29,6 @@ const CheckoutForm = ({service}) => {
 .then(res => res.json())
 .then(data => {
   
-console.log(data)
   if (data.payment) {
     setSuccess(`Your Payment is Completed!`);
     setTnID(data.transactionId);
@@ -119,7 +118,6 @@ if(intentError) {
   })
   .then(ress => ress.json())
       .then(res => {
-        // console.log(res)
       })
 }
 

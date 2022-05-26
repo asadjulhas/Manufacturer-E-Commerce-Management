@@ -46,7 +46,7 @@ const ManageProducts = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`http://localhost:5000/product/${productID}`, {
+    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/product/${productID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
@@ -79,12 +79,12 @@ const ManageProducts = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">Product</th>
+              <th className='d-none d-sm-block' scope="col">Product</th>
               <th scope="col"></th>
               <th scope="col">Price</th>
               <th scope="col">MinOrder</th>
               <th scope="col">stock</th>
-              <th scope="col">type</th>
+              <th className='d-none d-sm-block' scope="col">type</th>
               <th scope="col">Action</th>
             </tr>
           </thead> 
@@ -92,7 +92,7 @@ const ManageProducts = () => {
           <tbody>
             {data.map(o =>  
               <tr key={o._id}>
-              <td className="product-thumbnail">
+              <td className="product-thumbnail d-none d-sm-block">
                 <a>
                   <img width='30' src={o.img} alt={o.name}/>
                 </a>
@@ -114,7 +114,7 @@ const ManageProducts = () => {
                 <span className="unit-amount">{o.stock}</span>
               </td>
     
-              <td className="product-subtotal">
+              <td className="product-subtotal d-none d-sm-block">
               <span className="unit-amount">{o.type}</span>
               </td>
     

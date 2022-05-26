@@ -303,3 +303,13 @@ checkout-area .billing-details {
 .faq-accordion.bg-light {
   background: #ff6a001f !important;
 }
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+  .checkout-area .container {
+    padding: 0;
+  }
+  .cart-totals.mb-0 {
+    padding: 15px 5px;
+  }
+}

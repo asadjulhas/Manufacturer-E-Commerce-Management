@@ -79,3 +79,73 @@
 	top: 1.70px;
 	margin-right: 5px;
 }
+
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+  .homePage .carousel-caption {
+    bottom: 11%;
+  }
+  .homePage .carousel-caption h3 {
+    font-size: 26px;
+  }
+    
+}
+
+
+@media only screen and (min-width: 767px) and (max-width: 991px) { 
+
+  .homePage .carousel-caption {
+    bottom: 3%;
+  }
+  .homePage .carousel-caption h3 {
+    font-size: 23px;
+  }
+  .single-categories h3 {
+    font-size: 13px;
+  }
+
+}
+  
+  
+  /* Mobile Layout: 320px. */
+  @media only screen and (max-width: 767px) { 
+    .banner-btn {
+      display: none;
+    }
+    .homePage .carousel-caption p {
+      display: none;
+    }
+    .homePage .carousel-caption {
+      bottom: 0%;
+    }
+    .homePage .carousel-caption h3 {
+      font-size: 14px;
+    }
+    .section-title h2 {
+      margin-top: 0px;
+    }
+    .product-img img {
+      width: 50%;
+    }
+    .single-products .product-img {
+      text-align: center;
+    } 
+    .sale-offer-bg.bg-2 {
+      margin-top: 50px;
+    }
+    .counter_item {
+      margin-top: 40px;
+    }
+    .count_down {
+      margin-bottom: 35px;
+    }
+  
+  }
+
+  @media only screen and (min-width: 480px) and (max-width: 767px) { 
+    .homePage .carousel-caption {
+      bottom: 11%;
+    }
+    
+  }

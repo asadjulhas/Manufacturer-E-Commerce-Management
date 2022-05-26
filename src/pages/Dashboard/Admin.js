@@ -82,19 +82,19 @@ const removeAdmin = (email) => {
 <table className="table table-normal w-full">
   <thead>
     <tr>
-      <th>#</th>
+      <th className='d-none d-sm-block'>#</th>
       <th>Name</th>
       <th>Email</th>
-      <th>ID</th>
+      <th className='d-none d-sm-block'>ID</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
     {data?.map((s, index) => <tr key={s._id}>
-      <th>{index+1}</th>
+      <th className='d-none d-sm-block'>{index+1}</th>
       <td>{s.name}</td>
       <td>{s.email}</td>
-      <td>{s._id}</td>
+      <td className='d-none d-sm-block'>{s._id}</td>
       <td>
       <div className="indicator">
       {s.role === 'admin' ? <button onClick={()=>removeAdmin(s.email)} className="btn btn-sm bg-warning border-0 text-white">Remove admin</button> : <button onClick={()=>makeAdmin(s.email)} className="btn btn-sm bg-success border-0 text-white">Make admin</button> }

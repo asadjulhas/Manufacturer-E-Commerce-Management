@@ -21,7 +21,7 @@ const CTA = () => {
     <section className="sale-offer-area">
 			<div className="container">
 				<div className="row">
-          <div className="col-md-3">
+          <div className="col-lg-3 col-md-6">
           <div>  
           <div className='container-fluid' >      
            <div className="row" style={{marginBottom: "5px"}}>      
@@ -48,7 +48,7 @@ const CTA = () => {
   
       </div>
           </div>
-          <div className="col-md-9">
+          <div className="col-lg-9  col-md-6">
           <div className="sale-offer-bg bg-2">
 					<h5>Sale offer - <span>30% off</span></h5>
 					<h3>All types of premium quality tools</h3>

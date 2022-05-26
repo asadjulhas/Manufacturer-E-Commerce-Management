@@ -71,3 +71,11 @@
 .single-categories:hover h3 a {
   color: #ff6a00;
 }
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
+  .single-categories h3 {
+    font-size: 18px;
+  }
+    
+}

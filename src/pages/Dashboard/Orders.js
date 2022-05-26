@@ -93,7 +93,7 @@ const Orders = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">Product</th>
+              <th className='d-none d-sm-block' scope="col">Product</th>
               <th scope="col"></th>
               <th scope="col">Quantity</th>
               <th scope="col">Status</th>
@@ -104,7 +104,7 @@ const Orders = () => {
                               
           <tbody>
             {data.map(o =>  <tr key={o._id}>
-              <td className="product-thumbnail">
+              <td className="product-thumbnail d-none d-sm-block">
                 <a>
                   <img width='40' src={o.img} alt={o.productName}/>
                 </a>

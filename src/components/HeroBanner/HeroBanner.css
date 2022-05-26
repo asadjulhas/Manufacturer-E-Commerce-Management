@@ -80,6 +80,36 @@
 	margin-right: 5px;
 }
 
+/* Large Layout: 1600px. */
+@media only screen and (min-width: 1281px) and (max-width: 1665px) { 
+  .homePage .carousel-caption {
+    bottom: 18%;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 1385px) and (max-width: 1530px) { 
+  .homePage .carousel-caption {
+    bottom: 13%;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1281px) and (max-width: 1430px) { 
+  .homePage .carousel-caption {
+    bottom: 16%;
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1281px) and (max-width: 1380px) { 
+  .homePage .carousel-caption {
+    bottom: 12%;
+    width: 60%;
+  }
+}
+
+
 /* Medium Layout: 1280px. */
 
 @media only screen and (min-width: 992px) and (max-width: 1280px) {

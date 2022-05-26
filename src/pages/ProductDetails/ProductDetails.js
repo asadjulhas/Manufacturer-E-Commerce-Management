@@ -248,7 +248,7 @@ const ProductDetails = () => {
   
   <div className="d-flex justify-content-between">
   <Button disabled={disable} className='btn-style2' variant="primary" type="submit">
-    Place orderrr
+    Place order
   </Button> {total > 0 ? <p className='text-success'>Total: <b>${total}</b>  </p> : ''}
   </div>
 </Form>

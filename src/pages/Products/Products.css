@@ -232,10 +232,11 @@
 }
 
 .single-products .product-content .title {
-  color: #111111;
-  margin-bottom: 12px;
-  display: block;
-  font-size: 16px;
+	color: #111111;
+	margin-bottom: 12px;
+	display: block;
+	font-size: 16px;
+	padding: 0;
 }
 
 .single-products .product-content .title:hover {

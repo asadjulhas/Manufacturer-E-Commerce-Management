@@ -7,13 +7,14 @@ import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import DeleteMOdal from '../../components/Modal/DeleteMOdal';
+import UpdateProduct from '../../components/Modal/UpdateProduct';
 import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
 import auth from '../../firebaseinit';
 import PageTitle from '../../hooks/PageTitle';
 
 const ManageProducts = () => {
   const [name, setName] = useState('')
-  const [orderID, setOrderID] = useState('')
+  const [productID, setProductID] = useState('')
   const [deleteAlert, setDeleteAlert] = useState(false)
   const accessToken = localStorage.getItem('accessToken')
 
@@ -21,6 +22,12 @@ const ManageProducts = () => {
    const [show, setShow] = useState(false);
    const handleClose = () => setShow(false);
    const handleShow = () => setShow(true);
+
+   // Modal for  Update stock
+  const [showStock, setShowStock] = useState(false);
+  const handleCloseStock = () => setShowStock(false);
+  const handleShowStock = () => setShowStock(true);
+  const [product, setProduct] = useState([])
 
   const { data, isLoading, refetch } = useQuery(["products"], () =>
     fetch("https://boiling-brushlands-60040.herokuapp.com/product").then(
@@ -34,12 +41,12 @@ const ManageProducts = () => {
 
   const handleCancle = (id, name) => {
     setName(name)
-    setOrderID(id);
+    setProductID(id);
     handleShow()
   }
 
   const deleteConfirm = () => {
-    axios.delete(`http://localhost:5000/product/${orderID}`, {
+    axios.delete(`http://localhost:5000/product/${productID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
@@ -54,6 +61,11 @@ const ManageProducts = () => {
         handleClose();
       }
     })
+  }
+
+  const handleEditForm = (product) => {
+    handleShowStock();
+    setProduct(product)
   }
 
   return (
@@ -78,7 +90,8 @@ const ManageProducts = () => {
           </thead> 
                               
           <tbody>
-            {data.map(o =>  <tr key={o._id}>
+            {data.map(o =>  
+              <tr key={o._id}>
               <td className="product-thumbnail">
                 <a>
                   <img width='30' src={o.img} alt={o.name}/>
@@ -90,7 +103,7 @@ const ManageProducts = () => {
               </td>
     
               <td className="product-name">
-                <span>$ {o.price}</span>
+                <span>${o.price}</span>
               </td>
     
               <td className="product-price">
@@ -107,9 +120,18 @@ const ManageProducts = () => {
     
     
               <td className="trash">
+              <Link to='' onClick={()=>handleEditForm(o)} className="btn btn-sm btn-primary">
+                Edit
+              </Link>&nbsp;
               <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.name)} className="btn btn-sm btn-danger border-0">Delete</label> 
               </td>
-            </tr> )}
+    <UpdateProduct refetch={refetch} product={product} showStock={showStock} handleCloseStock={handleCloseStock} />
+              </tr>
+              
+            
+            
+            
+            )}
     
     
           </tbody>

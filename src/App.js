@@ -22,6 +22,8 @@ import Admin from './pages/Dashboard/Admin';
 import AddProduct from './pages/Dashboard/AddProduct';
 import ManageOrder from './pages/Dashboard/ManageOrder';
 import ManageProducts from './pages/Dashboard/ManageProducts';
+import Portfolio from './pages/Portfolio/Portfolio';
+import Blog from './pages/Blog/Blog';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
      <Routes>
        <Route path='/' element={<Home/>}/>
        <Route path='/register' element={<Register/>}/>
+       <Route path='/my-portfolio' element={<Portfolio/>}/>
+       <Route path='/blog' element={<Blog/>}/>
        <Route path='/login' element={<Login/>}/>
        <Route path='*' element={<NotFound/>}/>
        <Route path='/product/:id' element={

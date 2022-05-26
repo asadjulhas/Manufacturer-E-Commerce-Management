@@ -1,0 +1,37 @@
+.blogs_page {
+  margin-top: 40px;
+}
+.single_Blog {
+  color: #333;
+  padding: 14px 20px;
+  text-align: left;
+  border-radius: 5px;
+  margin-bottom: 0px;
+}
+.single_Blog h2 {
+  font-size: 15px;
+  font-weight: 700;
+}
+.single_Blog p {
+  font-size: 15px;
+}
+.table_content {
+  font-size: 15px;
+  color: #333;
+}
+.table-bordered > :not(caption) > * {
+	border-width: 2px 0 !important;
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+  .single_Blog h2 {
+    font-size: 12px;
+  }
+  .table > :not(caption) > * > * {
+    font-size: 12px;
+  }
+  .single_Blog {
+    margin-bottom: 0px;
+  }
+
+}

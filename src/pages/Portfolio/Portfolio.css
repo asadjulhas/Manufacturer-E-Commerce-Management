@@ -1,0 +1,22 @@
+span.span_valuse {
+	transition: all ease 0.5s;
+	text-decoration: none;
+	color: #978D8D !important;
+}
+.billing-address-bar.bar_two {
+	background: #e6f7f6;
+}
+.live_link {
+	color: green;
+	font-weight: 500;
+	text-decoration: underline !important;
+}
+.span_valuse.project_details {
+	font-size: 15px;
+}
+.career_objective {
+	color: #867C7C;
+	margin-top: 30px;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}

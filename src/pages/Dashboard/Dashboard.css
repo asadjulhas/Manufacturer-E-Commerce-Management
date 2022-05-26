@@ -53,7 +53,7 @@
   position: absolute;
   top: -12px;
   left: 0;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 
 .profile-bar .profile-info h3 {

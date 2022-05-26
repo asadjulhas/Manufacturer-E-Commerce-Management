@@ -5,6 +5,7 @@ import { Spinner } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import DeleteMOdal from '../../components/Modal/DeleteMOdal';
 import auth from '../../firebaseinit';
 import PageTitle from '../../hooks/PageTitle';
 
@@ -15,6 +16,12 @@ const ManageOrder = () => {
   const [data, setData] = useState([]);
   const [orderFetch, setOrderFetch] = useState(false)
 
+   // Delete Modal
+   const [show, setShow] = useState(false);
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
+  const [name, setName] = useState('')
+  const [orderID, setOrderID] = useState('')
 
   useEffect(()=> {
     setLoad(true)
@@ -63,6 +70,31 @@ const ManageOrder = () => {
       })
   }
 
+
+  const handleCancle = (id, name) => {
+    setName(name)
+    setOrderID(id);
+    handleShow()
+  }
+  
+  const deleteConfirm = () => {
+    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/order/${orderID}`, {
+      headers: {
+        'authorization': `Bearer ${accessToken}`
+      }
+    })
+    .then(res => {
+      if (res.data.deletedCount === 1) {
+        toast.success('Cancel Order Successfully!', {
+          position: 'top-center'
+        })
+        setOrderFetch(!orderFetch)
+        handleClose();
+      }
+    })
+  }
+
+
   if(load) {
     return (
       <div className="spinner">
@@ -82,8 +114,8 @@ const ManageOrder = () => {
         <table className="table table-bordered">
           <thead>
             <tr>
-              <th scope="col">Product</th>
-              <th scope="col"></th>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
               <th scope="col">User</th>
               <th scope="col">Quantity</th>
               <th scope="col">Status</th>
@@ -93,11 +125,9 @@ const ManageOrder = () => {
           </thead> 
                               
           <tbody>
-            {data.map(o =>  <tr key={o._id}>
+            {data.map((o, index) =>  <tr key={o._id}>
               <td className="product-thumbnail">
-                <a>
-                  <img width='30' src={o.img} alt={o.productName}/>
-                </a>
+                {index+1}
               </td>
     
               <td className="product-name">
@@ -122,6 +152,7 @@ const ManageOrder = () => {
     
               <td className="trash">
               {!o.payment ? <Link to='' className="btn btn-sm btn-primary border-0">Unpaid</Link> : o.status ? <Link to='' className="btn btn-sm btn-info border-0 text-white">shipped</Link> : <Link to='' onClick={()=>handleShiped(o._id)} title='Click to shipped' className="btn btn-sm btn-success border-0 text-white">Pending</Link> }
+              &nbsp;{!o.payment ? <label htmlFor="delete-confirm-modal" onClick={()=>handleCancle(o._id, o.productName)} className="btn btn-sm btn-danger border-0">Cancel</label> : '' }
               </td>
             </tr> )}
     
@@ -137,6 +168,7 @@ const ManageOrder = () => {
 						</Link>
     </div>}
   
+    <DeleteMOdal name={name} show={show} handleClose={handleClose} deleteConfirm={deleteConfirm}  />
     </>
   );
 };

@@ -1,18 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import LoadingSpinner from '../../components/Spinner/LoadingSpinner';
 import './Testimonial.css'
 
 const Testimonial = () => {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://boiling-brushlands-60040.herokuapp.com/reviews')
-    .then(res => {
-      setReviews(res.data)
-    })
-  },[])
-
-  console.log(reviews)
+  const { data, isLoading } = useQuery(["testimonial"], () =>
+    fetch("https://boiling-brushlands-60040.herokuapp.com/reviews").then(
+      (res) => res.json()
+    )
+  );
+  if (isLoading) {
+    return <LoadingSpinner className="homepage_products" />;
+  }
   return (
     <section className="special-area pb-30 testimonial_area">
 			<div className="container">
@@ -21,7 +21,7 @@ const Testimonial = () => {
 						</div>
 				<div className="row justify-content-center">
 					
-							{reviews.map(r => 
+							{data.map(r => 
               <div key={r._id} className="col-lg-4 col-md-6">
               <ul className="trending-product-list special-product-list">
                 <li className="single-list">

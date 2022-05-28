@@ -55,6 +55,7 @@
   margin-bottom: 10px;
   display: block;
   font-size: 14px;
+  padding-bottom: opx;;
 }
 
 .trending-product-list .single-list .product-content .title:hover {

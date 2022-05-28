@@ -1,54 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './CTA.css'
-import OwlCarousel from 'react-owl-carousel';  
-import 'owl.carousel/dist/assets/owl.carousel.css';  
-import 'owl.carousel/dist/assets/owl.theme.default.css'; 
-import { Carousel } from 'react-bootstrap';
-import axios from 'axios';
+import './CTA.css';
 
 const CTA = () => {
-  const [reviews, setReviews] = useState([]);
-
-  useEffect(() => {
-    axios.get('https://boiling-brushlands-60040.herokuapp.com/reviews')
-    .then(res => {
-      setReviews(res.data)
-    })
-  },[])
   
   return (
     <section className="sale-offer-area">
 			<div className="container">
 				<div className="row">
-          <div className="col-lg-3 col-md-6">
-          <div>  
-          <div className='container-fluid' >      
-           <div className="row" style={{marginBottom: "5px"}}>      
-           <div className="col-sm-12 btn btn-info reviewBanner text-white">      
-          Reviews from our clients 
-           </div>      
-           </div>  
-       </div>  
-       <div className='container-fluid' >            
-        <OwlCarousel items={1}  
-          className="owl-theme"  
-          loop  
-          nav  
-          margin={8} >  
-          {reviews.map(r => 
-          <div className='text-center' key={r._id}>
-            <img className="img" src={r.img} alt='' /> <br />
-            <h4>{r.name}</h4>
-            <p>{r.comments}</p>
-            <span className='rating'>{r.rating}.00 start</span>
-          </div> )}
-      </OwlCarousel>  
-      </div>  
-  
-      </div>
-          </div>
-          <div className="col-lg-9  col-md-6">
+          <div className="col-lg-12">
           <div className="sale-offer-bg bg-2">
 					<h5>Sale offer - <span>30% off</span></h5>
 					<h3>All types of premium quality tools</h3>

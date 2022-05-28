@@ -5,6 +5,7 @@ import Categories from '../Categories/Categories';
 import Counter from '../Counter/Counter';
 import CTA from '../CTA/CTA';
 import Products from '../Products/Products';
+import Testimonial from '../Testimonial/Testimonial';
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Categories/> 
       <Products/>
       <CTA/>
+      <Testimonial/>
       <Counter/>
     </div>
   );

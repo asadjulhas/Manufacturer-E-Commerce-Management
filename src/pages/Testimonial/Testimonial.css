@@ -1,0 +1,114 @@
+
+.testimonial_area {
+  margin-top: 80px;
+}
+.trending-product-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #dddddd;
+  padding: 20px;
+}
+
+.trending-product-list .single-list {
+  position: relative;
+  padding-left: 112px;
+  border-bottom: 1px solid #dddddd;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+}
+
+.trending-product-list .single-list .hot {
+  background-color: #ff0707;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50px;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trending-product-list .single-list .hot.new {
+  background-color: #ff6a00;
+}
+
+.trending-product-list .single-list:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.trending-product-list .single-list img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 112px;
+}
+
+.trending-product-list .single-list .product-content .title {
+  color: #111111;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 14px;
+}
+
+.trending-product-list .single-list .product-content .title:hover {
+  color: #ff6a00;
+}
+
+.trending-product-list .single-list .product-content .products-price {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.trending-product-list .single-list .product-content .products-price li {
+  display: inline-block;
+  color: #ff6a00;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.trending-product-list .single-list .product-content .products-price li del {
+  color: #9C9C9C;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.trending-product-list .single-list .product-content .products-rating {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.trending-product-list .single-list .product-content .products-rating li {
+  display: inline-block;
+}
+
+.trending-product-list .single-list .product-content .products-rating li i {
+  color: #ff6a00;
+}
+
+.trending-product-list .single-list .product-content .products-rating li a {
+  position: relative;
+  top: -2px;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.trending-product-list.special-product-list {
+  margin-bottom: 24px;
+}
+
+.trending-product-list.special-product-list .single-list img {
+  max-width: 100px;
+}
+.client_img {
+  border-radius: 50%;
+}

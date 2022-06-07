@@ -1,5 +1,5 @@
 Borak tools [Live link](https://borak-tools.web.app/).
-Github [Server side](https://github.com/asadjulhas/Manufacturer-E-Commerce-Management/).
+Github [Server side](https://github.com/asadjulhas/Manufacturer-E-Commerce-Management-server).
 
 ## Short description about this website
 

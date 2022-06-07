@@ -1,4 +1,5 @@
 Borak tools [Live link](https://borak-tools.web.app/).
+Github [Server side](https://github.com/asadjulhas/Manufacturer-E-Commerce-Management/).
 
 ## Short description about this website
 
@@ -11,4 +12,5 @@ Borak tools [Live link](https://borak-tools.web.app/).
 * Admin able to add a product with image, update products details including stock update, minium order limit change, and all the others info
 * Admin also make an user Admin, Admin specific APIs/route are protected using Jsonwebtoken and Admin role.
 * User/Appointment data is stored in MongoD8. APIs are built with NodeS and ExpressJS. Admin/User specific APIs are protected using Jsonwebtoken.
-* This single-page web app is completely made with react & its router feature. It's also fully responsive for mobile and tablet devices*Technologies Used: ReactJS, React router, React Bootstrap, React-Hook-Form, Firebase, Nodejs, Express.js, MongoDB, Jsonwebtoken, React-firebase-hooks, Stripe, Heroku.
+* This single-page web app is completely made with react & its router feature. It's also fully responsive for mobile and tablet devices
+* Technologies Used: ReactJS, React router, React Bootstrap, React-Hook-Form, Firebase, Nodejs, Express.js, MongoDB, Jsonwebtoken, React-firebase-hooks, Stripe, Heroku.

@@ -93,7 +93,7 @@ and WordPress. I love bug/error fixing. Bug fixing and website optimization is m
                   <li>
                     <span>Familiar:</span>
                     <span className="span_valuse">
-                      Redux, Vuejs, Nextjs, TypeScript
+                      Redux, Vuejs, Nextjs, TypeScript, GraphQL
                     </span>
                   </li>
                   <li>

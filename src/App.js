@@ -33,7 +33,7 @@ function App() {
        <Route path='/' element={<Home/>}/>
        <Route path='/register' element={<Register/>}/>
        <Route path='/my-portfolio' element={<Portfolio/>}/>
-       <Route path='/blog' element={<Blog/>}/>
+       {/* <Route path='/blog' element={<Blog/>}/> */}
        <Route path='/login' element={<Login/>}/>
        <Route path='*' element={<NotFound/>}/>
        <Route path='/product/:id' element={

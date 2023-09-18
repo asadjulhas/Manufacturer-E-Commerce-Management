@@ -9,7 +9,7 @@ import PageTitle from '../../hooks/PageTitle';
 
 const Admin = () => {
   const accessToken = localStorage.getItem('accessToken')
-  const {data, isLoading, refetch} = useQuery(['alluser'], () => fetch('https://boiling-brushlands-60040.herokuapp.com/all-users', {
+  const {data, isLoading, refetch} = useQuery(['alluser'], () => fetch('https://e-commerce-management-server.vercel.app/all-users', {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -26,7 +26,7 @@ if(isLoading) {
 
 // Make admin
 const makeAdmin = (email) => {
-  fetch(`https://boiling-brushlands-60040.herokuapp.com/admin/${email}`, {
+  fetch(`https://e-commerce-management-server.vercel.app/admin/${email}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -51,7 +51,7 @@ const makeAdmin = (email) => {
 
 // Remove admin
 const removeAdmin = (email) => {
-  fetch(`https://boiling-brushlands-60040.herokuapp.com/remove-admin/${email}`, {
+  fetch(`https://e-commerce-management-server.vercel.app/remove-admin/${email}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`

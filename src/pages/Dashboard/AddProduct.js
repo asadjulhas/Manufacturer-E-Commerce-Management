@@ -24,7 +24,7 @@ const AddProduct = () => {
     setLoader(true)
     axios
       .get(
-        `https://boiling-brushlands-60040.herokuapp.com/check-admin/${user.email}`,
+        `https://e-commerce-management-server.vercel.app/check-admin/${user.email}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ const AddProduct = () => {
                   img: imageUrl,
                 };
                 axios
-                  .post("https://boiling-brushlands-60040.herokuapp.com/product", product, {
+                  .post("https://e-commerce-management-server.vercel.app/product", product, {
                     headers: {
                       authorization: `Bearer ${accessToken}`,
                     },

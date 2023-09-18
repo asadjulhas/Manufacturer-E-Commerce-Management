@@ -6,7 +6,7 @@ import './Testimonial.css'
 
 const Testimonial = () => {
   const { data, isLoading } = useQuery(["testimonial"], () =>
-    fetch("https://boiling-brushlands-60040.herokuapp.com/reviews").then(
+    fetch("https://e-commerce-management-server.vercel.app/reviews").then(
       (res) => res.json()
     )
   );

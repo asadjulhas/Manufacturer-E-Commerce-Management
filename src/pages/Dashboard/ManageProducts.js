@@ -30,7 +30,7 @@ const ManageProducts = () => {
   const [product, setProduct] = useState([])
 
   const { data, isLoading, refetch } = useQuery(["products"], () =>
-    fetch("https://boiling-brushlands-60040.herokuapp.com/product").then(
+    fetch("https://e-commerce-management-server.vercel.app/product").then(
       (res) => res.json()
     )
   );
@@ -46,7 +46,7 @@ const ManageProducts = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/product/${productID}`, {
+    axios.delete(`https://e-commerce-management-server.vercel.app/product/${productID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

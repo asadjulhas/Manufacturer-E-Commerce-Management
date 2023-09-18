@@ -6,7 +6,7 @@ const useToken = (user) => {
   useEffect(()=>{
     if(user?.email) {
       const logUser = {email: user?.email, name: user?.displayName}
-      axios.put(`https://boiling-brushlands-60040.herokuapp.com/user/${user?.email}`, logUser)
+      axios.put(`https://e-commerce-management-server.vercel.app/user/${user?.email}`, logUser)
       .then(res => {
         if(res.data.accessToken) {
           localStorage.setItem('accessToken', res.data.accessToken);

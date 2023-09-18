@@ -25,7 +25,7 @@ const ManageOrder = () => {
 
   useEffect(()=> {
     setLoad(true)
-    fetch(`https://boiling-brushlands-60040.herokuapp.com/orders`, {
+    fetch(`https://e-commerce-management-server.vercel.app/orders`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -53,7 +53,7 @@ const ManageOrder = () => {
   },[orderFetch])
 
   const handleShiped = (id) => {
-    fetch(`https://boiling-brushlands-60040.herokuapp.com/status/${id}`, {
+    fetch(`https://e-commerce-management-server.vercel.app/status/${id}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -78,7 +78,7 @@ const ManageOrder = () => {
   }
   
   const deleteConfirm = () => {
-    axios.delete(`https://boiling-brushlands-60040.herokuapp.com/order/${orderID}`, {
+    axios.delete(`https://e-commerce-management-server.vercel.app/order/${orderID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

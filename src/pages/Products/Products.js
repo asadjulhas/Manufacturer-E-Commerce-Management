@@ -9,7 +9,7 @@ import LoadingSpinner from "../../components/Spinner/LoadingSpinner";
 
 const Products = () => {
   const { data, isLoading } = useQuery(["products"], () =>
-    fetch("https://boiling-brushlands-60040.herokuapp.com/product").then(
+    fetch("https://e-commerce-management-server.vercel.app/product").then(
       (res) => res.json()
     )
   );

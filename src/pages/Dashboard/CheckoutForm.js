@@ -20,7 +20,7 @@ const CheckoutForm = ({service}) => {
 
    // Check Payment status 
    useEffect(() => {
-    fetch(`https://boiling-brushlands-60040.herokuapp.com/order/${_id}`, {
+    fetch(`https://e-commerce-management-server.vercel.app/order/${_id}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -37,7 +37,7 @@ const CheckoutForm = ({service}) => {
   },[])
   useEffect(() => {
     if(!tnID) {
-      fetch('https://boiling-brushlands-60040.herokuapp.com/create-payment-intent', {
+      fetch('https://e-commerce-management-server.vercel.app/create-payment-intent', {
       method: 'POST',
       headers: {
         "content-type": "application/json",
@@ -108,7 +108,7 @@ if(intentError) {
   setSuccess(`Your Payment is Completed!`);
   setTnID(paymentIntent.id);
 
-  fetch(`https://boiling-brushlands-60040.herokuapp.com/payment/${_id}`, {
+  fetch(`https://e-commerce-management-server.vercel.app/payment/${_id}`, {
     method: 'PUT',
     headers: {
       "content-type": "application/json",

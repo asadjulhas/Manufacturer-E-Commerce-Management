@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     setLoad(true)
-    axios(`https://boiling-brushlands-60040.herokuapp.com/product/${id}`,{
+    axios(`https://e-commerce-management-server.vercel.app/product/${id}`,{
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
@@ -107,7 +107,7 @@ const ProductDetails = () => {
 
     const data = {clientName, email, productName, productId, quantity, phone, address, payment, price, img};
 
-    axios.post('https://boiling-brushlands-60040.herokuapp.com/order', data)
+    axios.post('https://e-commerce-management-server.vercel.app/order', data)
     .then(res => {
       if(res.data.acknowledged) {
         toast.success(`Your order successfully placed!`, {

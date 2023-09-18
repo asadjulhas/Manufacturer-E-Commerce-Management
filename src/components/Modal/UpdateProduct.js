@@ -42,7 +42,7 @@ const UpdateProduct = ({
       fstock,
       ftype
     };
-    axios.put("https://boiling-brushlands-60040.herokuapp.com/product", product, {
+    axios.put("https://e-commerce-management-server.vercel.app/product", product, {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },

@@ -90,7 +90,7 @@ const ManageProducts = () => {
           </thead> 
                               
           <tbody>
-            {data.map(o =>  
+            {data?.map(o =>  
               <tr key={o._id}>
               <td className="product-thumbnail d-none d-sm-block">
                 <a>

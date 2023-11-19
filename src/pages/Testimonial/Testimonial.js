@@ -21,7 +21,7 @@ const Testimonial = () => {
 						</div>
 				<div className="row justify-content-center">
 					
-							{data.map(r => 
+							{data?.map(r => 
               <div key={r._id} className="col-lg-4 col-md-6">
               <ul className="trending-product-list special-product-list">
                 <li className="single-list">

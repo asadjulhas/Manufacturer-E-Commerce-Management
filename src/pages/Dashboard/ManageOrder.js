@@ -125,7 +125,7 @@ const ManageOrder = () => {
           </thead> 
                               
           <tbody>
-            {data.map((o, index) =>  <tr key={o._id}>
+            {data?.map((o, index) =>  <tr key={o._id}>
               <td className="product-thumbnail d-none d-sm-block">
                 {index+1}
               </td>

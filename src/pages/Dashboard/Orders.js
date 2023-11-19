@@ -103,7 +103,7 @@ const Orders = () => {
           </thead> 
                               
           <tbody>
-            {data.map(o =>  <tr key={o._id}>
+            {data?.map(o =>  <tr key={o._id}>
               <td className="product-thumbnail d-none d-sm-block">
                 <a>
                   <img width='40' src={o.img} alt={o.productName}/>

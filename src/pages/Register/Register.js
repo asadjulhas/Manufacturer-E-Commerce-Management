@@ -75,10 +75,10 @@ const Register = () => {
 
     const validatePassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-    if(!validatePassword.test(password)) {
-      setError('Password contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number:');
-      return;
-    }
+    // if(!validatePassword.test(password)) {
+    //   setError('Password contain minimum eight characters, at least one uppercase letter, one lowercase letter and one number:');
+    //   return;
+    // }
 
     if(password !== passwordConfirm) {
       setError('Password not match')

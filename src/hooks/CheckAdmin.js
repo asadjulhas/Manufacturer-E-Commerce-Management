@@ -7,7 +7,7 @@ import auth from "../firebaseinit";
 function CheckAdmin() {
   const accessToken = localStorage.getItem('accessToken')
   const [user, loading, error] = useAuthState(auth);
-  const {data, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`https://e-commerce-management-server.vercel.app/check-admin/${user.email}`, {
+  const {data, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`https://manufacturer.asadjulhas.com/check-admin/${user.email}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`

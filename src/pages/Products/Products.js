@@ -9,7 +9,7 @@ import LoadingSpinner from "../../components/Spinner/LoadingSpinner";
 
 const Products = () => {
   const { data, isLoading } = useQuery(["products"], () =>
-    fetch("https://e-commerce-management-server.vercel.app/product").then(
+    fetch("https://manufacturer.asadjulhas.com/product").then(
       (res) => res.json()
     )
   );

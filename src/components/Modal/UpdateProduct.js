@@ -42,7 +42,7 @@ const UpdateProduct = ({
       fstock,
       ftype
     };
-    axios.put("https://e-commerce-management-server.vercel.app/product", product, {
+    axios.put("https://manufacturer.asadjulhas.com/product", product, {
         headers: {
           authorization: `Bearer ${accessToken}`,
         },

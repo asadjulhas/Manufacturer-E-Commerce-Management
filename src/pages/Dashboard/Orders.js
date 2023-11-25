@@ -25,7 +25,7 @@ const Orders = () => {
 
   useEffect(()=> {
     setLoad(true)
-    fetch(`https://e-commerce-management-server.vercel.app/my-orders?email=${user?.email}`, {
+    fetch(`https://manufacturer.asadjulhas.com/my-orders?email=${user?.email}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -67,7 +67,7 @@ const Orders = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`https://e-commerce-management-server.vercel.app/order/${orderID}`, {
+    axios.delete(`https://manufacturer.asadjulhas.com/order/${orderID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

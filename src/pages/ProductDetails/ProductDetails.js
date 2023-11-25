@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     setLoad(true)
-    axios(`https://e-commerce-management-server.vercel.app/product/${id}`,{
+    axios(`https://manufacturer.asadjulhas.com/product/${id}`,{
       headers: {
         'authorization': `Bearer ${accessToken}`
       }
@@ -107,7 +107,7 @@ const ProductDetails = () => {
 
     const data = {clientName, email, productName, productId, quantity, phone, address, payment, price, img};
 
-    axios.post('https://e-commerce-management-server.vercel.app/order', data)
+    axios.post('https://manufacturer.asadjulhas.com/order', data)
     .then(res => {
       if(res.data.acknowledged) {
         toast.success(`Your order successfully placed!`, {

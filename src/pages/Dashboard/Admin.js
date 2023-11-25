@@ -9,7 +9,7 @@ import PageTitle from '../../hooks/PageTitle';
 
 const Admin = () => {
   const accessToken = localStorage.getItem('accessToken')
-  const {data, isLoading, refetch} = useQuery(['alluser'], () => fetch('https://e-commerce-management-server.vercel.app/all-users', {
+  const {data, isLoading, refetch} = useQuery(['alluser'], () => fetch('https://manufacturer.asadjulhas.com/all-users', {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -26,7 +26,7 @@ if(isLoading) {
 
 // Make admin
 const makeAdmin = (email) => {
-  fetch(`https://e-commerce-management-server.vercel.app/admin/${email}`, {
+  fetch(`https://manufacturer.asadjulhas.com/admin/${email}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -51,7 +51,7 @@ const makeAdmin = (email) => {
 
 // Remove admin
 const removeAdmin = (email) => {
-  fetch(`https://e-commerce-management-server.vercel.app/remove-admin/${email}`, {
+  fetch(`https://manufacturer.asadjulhas.com/remove-admin/${email}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`

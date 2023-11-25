@@ -12,7 +12,7 @@ import './Dashboard.css'
 const Dashboard = () => {
   const accessToken = localStorage.getItem('accessToken')
   const [user, loading, error] = useAuthState(auth);
-  const {data: admin, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`https://e-commerce-management-server.vercel.app/check-admin/${user.email}`, {
+  const {data: admin, isLoading, refetch} = useQuery(['checkAdmin'], () => fetch(`https://manufacturer.asadjulhas.com/check-admin/${user.email}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`

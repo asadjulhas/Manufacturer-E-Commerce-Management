@@ -24,7 +24,7 @@ const AddProduct = () => {
     setLoader(true)
     axios
       .get(
-        `https://e-commerce-management-server.vercel.app/check-admin/${user.email}`,
+        `https://manufacturer.asadjulhas.com/check-admin/${user.email}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +56,7 @@ const AddProduct = () => {
                   img: imageUrl,
                 };
                 axios
-                  .post("https://e-commerce-management-server.vercel.app/product", product, {
+                  .post("https://manufacturer.asadjulhas.com/product", product, {
                     headers: {
                       authorization: `Bearer ${accessToken}`,
                     },

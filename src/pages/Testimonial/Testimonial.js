@@ -6,7 +6,7 @@ import './Testimonial.css'
 
 const Testimonial = () => {
   const { data, isLoading } = useQuery(["testimonial"], () =>
-    fetch("https://e-commerce-management-server.vercel.app/reviews").then(
+    fetch("https://manufacturer.asadjulhas.com/reviews").then(
       (res) => res.json()
     )
   );

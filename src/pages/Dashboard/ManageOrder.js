@@ -25,7 +25,7 @@ const ManageOrder = () => {
 
   useEffect(()=> {
     setLoad(true)
-    fetch(`https://e-commerce-management-server.vercel.app/orders`, {
+    fetch(`https://manufacturer.asadjulhas.com/orders`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -53,7 +53,7 @@ const ManageOrder = () => {
   },[orderFetch])
 
   const handleShiped = (id) => {
-    fetch(`https://e-commerce-management-server.vercel.app/status/${id}`, {
+    fetch(`https://manufacturer.asadjulhas.com/status/${id}`, {
     method: 'PUT',
     headers: {
       'authorization': `Bearer ${accessToken}`
@@ -78,7 +78,7 @@ const ManageOrder = () => {
   }
   
   const deleteConfirm = () => {
-    axios.delete(`https://e-commerce-management-server.vercel.app/order/${orderID}`, {
+    axios.delete(`https://manufacturer.asadjulhas.com/order/${orderID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

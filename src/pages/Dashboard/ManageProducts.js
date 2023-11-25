@@ -30,7 +30,7 @@ const ManageProducts = () => {
   const [product, setProduct] = useState([])
 
   const { data, isLoading, refetch } = useQuery(["products"], () =>
-    fetch("https://e-commerce-management-server.vercel.app/product").then(
+    fetch("https://manufacturer.asadjulhas.com/product").then(
       (res) => res.json()
     )
   );
@@ -46,7 +46,7 @@ const ManageProducts = () => {
   }
 
   const deleteConfirm = () => {
-    axios.delete(`https://e-commerce-management-server.vercel.app/product/${productID}`, {
+    axios.delete(`https://manufacturer.asadjulhas.com/product/${productID}`, {
       headers: {
         'authorization': `Bearer ${accessToken}`
       }

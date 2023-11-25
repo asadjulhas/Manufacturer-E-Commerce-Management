@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51L1cHwAAX8jorUm97rVngApkylkvtoBRz8n8z
 const Payment = () => {
   const {id} = useParams();
   const accessToken = localStorage.getItem('accessToken')
-  const {data, isLoading, refetch} = useQuery([`order-${id}`], () => fetch(`https://e-commerce-management-server.vercel.app/order/${id}`, {
+  const {data, isLoading, refetch} = useQuery([`order-${id}`], () => fetch(`https://manufacturer.asadjulhas.com/order/${id}`, {
     method: 'GET',
     headers: {
       'authorization': `Bearer ${accessToken}`
